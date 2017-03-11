@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="正则表达式正则表达式也叫规则表达式，就是用来匹配字符串的。由基本的元字符和限定字符组合成的。
+一个表达式，然后这个表达式有自己的规则。
+作用：通过这个规则验证字符串，从而获取想要的内容
+基本元字符1). 除了\n以外的任意的单个字符（字符串）
+\r   \n    回车换行
+2)[ ]  表示的范围">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="QJH">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Regular Expression"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="我的个人博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Regular Expression - 我的个人博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Regular Expression</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-04-25
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>正则表达式也叫规则表达式，就是用来匹配字符串的。由基本的元字符和限定字符组合成的。</p>
+<p>一个表达式，然后这个表达式有自己的规则。</p>
+<p>作用：通过这个规则验证字符串，从而获取想要的内容</p>
+<h3 id="基本元字符"><a href="#基本元字符" class="headerlink" title="基本元字符"></a>基本元字符</h3><p>1). 除了\n以外的任意的单个字符（字符串）</p>
+<pre><code>\r   \n    回车换行
+</code></pre><p>2)[ ]  表示的范围</p>
+<pre><code>[ . ]    就是一个点
+
+[m-n]    表示m到n之间（包括m，n）任意的一个数字
+
+         最大范围是[0-9]
+
+eg：   [a-z]             表示的是所有的小写字母中的任意一个
+
+       [A-Z]             表示的是所有的大写字母中的任意一个
+
+       [a-zA-Z]            表示的是所有的字母中的任意一个
+
+       [0-9a-zA-Z]       表示的是所有的数字和字母中的任意一个
+</code></pre><p>3)（）  提升优先级；分组</p>
+<p>分组：一对小括号就是一个组，从左到右计算组的个数</p>
+<p>4)|  或者</p>
+<p>级别最低</p>
+<p>限定符（+  *  ？）</p>
+<p>5)+        +前面的表达式出现1次到无限次</p>
+<p>6)<em>        </em>前面的表达式出现0次到无限次</p>
+<p>7)?        ?前面的表达式出现0次到1次</p>
+<pre><code>阻止贪婪模式
+</code></pre><p>8){   }    表示前面表达式的出现次数</p>
+<p>  {m,n}    表示大括号前面的表达式最少出现m次，最多出现n次</p>
+<p>  {0, }    表示大括号前面的表达式最少出现0次，最多出现无限次</p>
+<p>  { ，5}   错误写法！！！</p>
+<p>9)\d     表示的是所有数字中的一个======等价于[0-9]</p>
+<p>  \D    表达的是所有的非数字中的一个</p>
+<p>10)\s    表达的是空白符号        </p>
+<p>   \S   表达的是非空白符号   </p>
+<p>11)\w    表示的是非特殊符号(不严谨)</p>
+<pre><code>数字，字母，下划线
+</code></pre><p>   \W    表示的是特殊符号(不严谨)</p>
+<p>12）^    以什么开头</p>
+<pre><code>$    以什么结尾
+</code></pre><p> eg： ^[0-9]    这个字符串必须以数字开头</p>
+<pre><code>[^0-9]    取非
+
+ [a-z]$   这个字符串必须以小写字母结尾
+</code></pre><h3 id="创建正则表达式对象"><a href="#创建正则表达式对象" class="headerlink" title="创建正则表达式对象"></a>创建正则表达式对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1 var reg=new RegExp();</span></div><div class="line"><span class="comment">//2 var reg=new RegExp(/[0-9]/);</span></div><div class="line"><span class="comment">//3 var reg=/[0-9]/;</span></div></pre></td></tr></table></figure>
+<p>.test ()     只要字符串中有与正则表达式匹配的，结果就为true</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一种方式: 通过构造函数创建正则表达式对象 </span></div><div class="line"><span class="keyword">var</span> reg=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/[0-9]&#123;3&#125;/</span>); </div><div class="line"><span class="comment">//调用方法,验证是否匹配 </span></div><div class="line"><span class="keyword">var</span> result= reg.test(<span class="string">"我今年已经14f84岁了"</span>); <span class="built_in">console</span>.log(result);<span class="comment">//false </span></div><div class="line"><span class="comment">//第二种方式:通过字面量的方式创建正则表达式对象 </span></div><div class="line"><span class="keyword">var</span> reg2=<span class="regexp">/[0-9a-z]/</span>;<span class="comment">//数字和小写字母中的一个 </span></div><div class="line"><span class="built_in">console</span>.log(reg2.test(<span class="string">"what are you no sha lei 98362 no"</span>));<span class="comment">//true </span></div><div class="line"><span class="comment">//更简单的方式验证 </span></div><div class="line"><span class="built_in">console</span>.log(<span class="regexp">/[0-9]/</span>.test(<span class="string">"哦买噶的983"</span>));<span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>1)严谨     /^     $/</p>
+<p>验证是不是三个数字<br>/^\d{3}$/</p>
+<p>2) 中文</p>
+<p>使用 escape() 来编码字符串，然后使用 unescape() 对其解码：</p>
+<p>[\u4e00-\u9fa5]   表示的是中文汉字的范围   </p>
+<p>3)邮箱的表达式=====必须记住</p>
+<p>/^[0-9a-zA-Z<em>.-]+[@][0-9a-zA-Z</em>.-]+([.][a-zA-Z]+){1,2}$/</p>
+<p>4)登录验证（重点）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"> </span></div><div class="line">  <span class="comment">//函数.根据正则表达式 匹配当前这个元素中的value值是否匹配,使用的是失去焦点的事件 </span></div><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">checkInput</span>(<span class="params">element,reg</span>) </span>&#123;               </div><div class="line">     element.onblur=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;                </div><div class="line">       <span class="keyword">if</span>(reg.test(element.value)) &#123;               </div><div class="line">         element.nextElementSibling.innerText=<span class="string">"正确了"</span>;       </div><div class="line">         element.nextElementSibling.style.color=<span class="string">"green"</span>;</div><div class="line">       &#125; <span class="keyword">else</span> &#123; </div><div class="line">         element.nextElementSibling.innerText=<span class="string">"叫你嘚瑟，错了吧"</span>;                     element.nextElementSibling.style.color=<span class="string">"red"</span>;</div><div class="line">       &#125; </div><div class="line">     &#125;; </div><div class="line">   &#125; </div><div class="line">  <span class="comment">/* </span></div><div class="line">  * 手机号码 * 130 131 132 133 134 135 136 137 138 139 </div><div class="line">  * 147 </div><div class="line">  * 150 151 152 153 154 155 156 157 158 159 </div><div class="line">  * 171 177 170 176 178</div><div class="line">  * 180 181 182 183 185 186 187 188 189 </div><div class="line">  * [1](([35][0-9])|([4][7])|([7][01768])|([8][0-3]|[5-9]))\d&#123;8&#125;   </div><div class="line">  */ </div><div class="line">  <span class="comment">//验证qq </span></div><div class="line">  <span class="keyword">var</span> qqReg=<span class="regexp">/^\d&#123;5,10&#125;/</span>; </div><div class="line">  checkInput(my(<span class="string">"qq"</span>),qqReg); </div><div class="line">  <span class="comment">//验证手机 </span></div><div class="line">  <span class="keyword">var</span> phoneReg=<span class="regexp">/^1\d&#123;8&#125;/</span>; </div><div class="line">  checkInput(my(<span class="string">"phone"</span>),phoneReg); </div><div class="line">  <span class="comment">//验证邮箱 </span></div><div class="line">  <span class="keyword">var</span> eMailReg=<span class="regexp">/^[0-9a-zA-Z.-]+[@][0-9a-zA-Z.-]+(.+)&#123;1,2&#125;/</span>; </div><div class="line">  checkInput(my(<span class="string">"e-mail"</span>),eMailReg); </div><div class="line">  <span class="comment">//验证座机 </span></div><div class="line">  <span class="keyword">var</span> telReg=<span class="regexp">/^[08]\d&#123;2,4&#125;[-]\d&#123;7,8&#125;/</span>; </div><div class="line">  checkInput(my(<span class="string">"telephone"</span>),telReg); </div><div class="line">  <span class="comment">//验证姓名 </span></div><div class="line">  <span class="keyword">var</span> nameReg=<span class="regexp">/^[\u4e00-\u9fa5]&#123;2,6&#125;/</span>; </div><div class="line">  checkInput(my(<span class="string">"fullName"</span>),nameReg)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>5)g    全局匹配</p>
+<p> i     忽略大小写</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//去掉字符串两边的空格 trim</span></div><div class="line"><span class="keyword">var</span> str2=<span class="string">" 嘻嘻 哈哈 "</span>;</div><div class="line">str2=str2.replace(<span class="regexp">/^\s+|\s+$/g</span>,<span class="string">""</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"====="</span>+str2+<span class="string">"====="</span>);</div></pre></td></tr></table></figure>
+<p>match方法可以通过正则表达式匹配字符串中的内容,如果加上g,匹配所有,如果不加只匹配第一个=====返回值是数组</p>
+<p>exec方法====返回值是数组</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 QJH<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
