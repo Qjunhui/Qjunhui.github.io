@@ -1,50 +1,335 @@
-extends base
 
-block title
-  title= page.title + ' | ' + config.title
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  
+  <title>RegExp | 我的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="正则表达式正则表达式也叫规则表达式，就是用来匹配字符串的。由基本的元字符和限定字符组合成的。
+一个表达式，然后这个表达式有自己的规则。
+作用：通过这个规则验证字符串，从而获取想要的内容
+基本元字符1). 除了\n以外的任意的单个字符（字符串）
+\r   \n    回车换行
+2)[ ]  表示的范围
+[ . ]    就是一个点
 
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format('ll')
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-    if theme.duoshuo
-      a.ds-thread-count(data-thread-key=page.path, href=url_for(page.path) + '#comments')
-    if theme.disqus
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content)
-    .post-content
-      != page.content
-    include _partial/tag
-    include _partial/post_nav
-    if theme.duoshuo
-      div(class='ds-share flat' data-thread-key=page.path, data-title=page.title, data-url=page.permalink)
-         .ds-share-inline
-            ul.ds-share-icons-16
-              li(data-toggle='ds-share-icons-more')
-                a(href='javascript:void(0);').ds-more= __('shareto')
-                  | :
-              li
-                a(href='javascript:void(0);' data-service='weibo').ds-weibo 微博
-              li
-                a(href='javascript:void(0);' data-service='qzone').ds-qzone QQ空间
-              li
-                a(href='javascript:void(0);' data-service='qqt').ds-qqt 腾讯微博
-              li
-                a(href='javascript:void(0);' data-service='wechat').ds-wechat 微信
-            .ds-share-icons-more
-    #comments
-      include _partial/comments
+[m-n]    表示m到n之间（包括m，n）任意的一个数字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RegExp">
+<meta property="og:url" content="http://yoursite.com/2016/06/03/RegExp/index.html">
+<meta property="og:site_name" content="我的个人博客">
+<meta property="og:description" content="正则表达式正则表达式也叫规则表达式，就是用来匹配字符串的。由基本的元字符和限定字符组合成的。
+一个表达式，然后这个表达式有自己的规则。
+作用：通过这个规则验证字符串，从而获取想要的内容
+基本元字符1). 除了\n以外的任意的单个字符（字符串）
+\r   \n    回车换行
+2)[ ]  表示的范围
+[ . ]    就是一个点
+
+[m-n]    表示m到n之间（包括m，n）任意的一个数字">
+<meta property="og:updated_time" content="2017-03-11T03:06:44.198Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RegExp">
+<meta name="twitter:description" content="正则表达式正则表达式也叫规则表达式，就是用来匹配字符串的。由基本的元字符和限定字符组合成的。
+一个表达式，然后这个表达式有自己的规则。
+作用：通过这个规则验证字符串，从而获取想要的内容
+基本元字符1). 除了\n以外的任意的单个字符（字符串）
+\r   \n    回车换行
+2)[ ]  表示的范围
+[ . ]    就是一个点
+
+[m-n]    表示m到n之间（包括m，n）任意的一个数字">
+  
+    <link rel="alternative" href="/atom.xml" title="我的个人博客" type="application/atom+xml">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+  
+
+</head>
+
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <nav id="upper-nav" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <div class="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        
+          <a id="nav-github" class="nav-icon" href="https://github.com/myname"></a>
+        
+      </div>
+    </nav>
+    <div id="header-title">
+      
+        <h1 id="blog-title-wrap">
+          <a href="/" id="blog-title">My Blog</a>
+        </h1>
+      
+    </div>
+    <div id="contenedor">
+      <ul class="cube">
+        <li class="cara">MyLogo</li>
+        <li class="cara"></li>
+        <li class="cara"></li>
+        <li class="cara"></li>
+        <li class="cara"></li>
+        <li class="cara"></li>
+      </ul>
+    </div>
+    <nav id="main-nav">
+      
+        <a class="main-nav-link" href="/">Home</a>
+      
+        <a class="main-nav-link" href="/archives">Archives</a>
+      
+        <a class="main-nav-link" href="/about">About</a>
+      
+      <a class="main-nav-link st-search-show-outputs">Search</a>
+    </nav>
+  </div>
+</header>
+
+    <div class="outer">
+      <section id="main"><article id="post-RegExp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <h3 href="/2016/06/03/RegExp/" class="article-date">
+  <time datetime="2016-06-03T12:15:34.000Z" itemprop="datePublished">2016-06-03</time>
+</h3>
+    
+  </div>
+  <div class="article-inner">
+  <div class="curve-down">
+  <div class="fill-content">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      RegExp
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>正则表达式也叫规则表达式，就是用来匹配字符串的。由基本的元字符和限定字符组合成的。</p>
+<p>一个表达式，然后这个表达式有自己的规则。</p>
+<p>作用：通过这个规则验证字符串，从而获取想要的内容</p>
+<h3 id="基本元字符"><a href="#基本元字符" class="headerlink" title="基本元字符"></a>基本元字符</h3><p>1). 除了\n以外的任意的单个字符（字符串）</p>
+<p>\r   \n    回车换行</p>
+<p>2)[ ]  表示的范围</p>
+<pre><code>[ . ]    就是一个点
+
+[m-n]    表示m到n之间（包括m，n）任意的一个数字
+
+         最大范围是[0-9]
+
+eg：   [a-z]             表示的是所有的小写字母中的任意一个
+
+       [A-Z]             表示的是所有的大写字母中的任意一个
+
+       [a-zA-Z]            表示的是所有的字母中的任意一个
+
+       [0-9a-zA-Z]       表示的是所有的数字和字母中的任意一个
+</code></pre><p>3)（）  提升优先级；分组</p>
+<p>分组：一对小括号就是一个组，从左到右计算组的个数</p>
+<p>4)|  或者</p>
+<p>级别最低</p>
+<p><b>限定符（+  *  ？）</b></p>
+<p>5)+    </p>
+<p>+前面的表达式出现1次到无限次</p>
+<p>6)*  </p>
+<p>*前面的表达式出现0次到无限次</p>
+<p>7)?  </p>
+<p>?前面的表达式出现0次到1次</p>
+<p>阻止贪婪模式</p>
+<p>8){   }    表示前面表达式的出现次数</p>
+<pre><code>{m,n}    表示大括号前面的表达式最少出现m次，最多出现n次
+
+{0, }    表示大括号前面的表达式最少出现0次，最多出现无限次
+
+{ ，5}   错误写法！！！
+</code></pre><p>9)\d     表示的是所有数字中的一个======等价于[0-9]</p>
+<p>  \D    表达的是所有的非数字中的一个</p>
+<p>10)\s    表达的是空白符号        </p>
+<p>   \S   表达的是非空白符号   </p>
+<p>11)\w    表示的是非特殊符号(不严谨)</p>
+<p>数字，字母，下划线</p>
+<p>   \W    表示的是特殊符号(不严谨)</p>
+<p>12）^    以什么开头</p>
+<p> $    以什么结尾</p>
+<pre><code>^[0-9]    这个字符串必须以数字开头
+
+[^0-9]    取非
+
+[a-z]$   这个字符串必须以小写字母结尾
+</code></pre><h3 id="创建正则表达式对象"><a href="#创建正则表达式对象" class="headerlink" title="创建正则表达式对象"></a>创建正则表达式对象</h3><p>.test ()     只要字符串中有与正则表达式匹配的，结果就为true</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一种方式: 通过构造函数创建正则表达式对象 </span></div><div class="line"><span class="keyword">var</span> reg=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/[0-9]&#123;3&#125;/</span>); </div><div class="line"><span class="comment">//调用方法,验证是否匹配 </span></div><div class="line"><span class="keyword">var</span> result= reg.test(<span class="string">"我今年已经14f84岁了"</span>); <span class="built_in">console</span>.log(result);<span class="comment">//false </span></div><div class="line"><span class="comment">//第二种方式:通过字面量的方式创建正则表达式对象 </span></div><div class="line"><span class="keyword">var</span> reg2=<span class="regexp">/[0-9a-z]/</span>;<span class="comment">//数字和小写字母中的一个 </span></div><div class="line"><span class="built_in">console</span>.log(reg2.test(<span class="string">"what are you no sha lei 98362 no"</span>));<span class="comment">//true </span></div><div class="line"><span class="comment">//更简单的方式验证 </span></div><div class="line"><span class="built_in">console</span>.log(<span class="regexp">/[0-9]/</span>.test(<span class="string">"哦买噶的983"</span>));<span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>1)严谨     /^     $/</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//验证是不是三个数字</span></div><div class="line">/^\d&#123;<span class="number">3</span>&#125;$/</div></pre></td></tr></table></figure>
+<p>2) 中文</p>
+<p>使用 escape() 来编码字符串，然后使用 unescape() 对其解码：</p>
+<pre><code>[\u4e00-\u9fa5]     //表示的是中文汉字的范围   
+</code></pre><p>3)邮箱的表达式(重点)</p>
+<pre><code>/^[0-9a-zA-Z_.-]+[@][0-9a-zA-Z_.-]+([.][a-zA-Z]+){1,2}$/
+</code></pre><p>4)登录验证</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//函数.根据正则表达式 匹配当前这个元素中的value值是否匹配,使用的是失去焦点的事件 </span></div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">checkInput</span>(<span class="params">element,reg</span>) </span>&#123;               </div><div class="line">   element.onblur=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;                </div><div class="line">     <span class="keyword">if</span>(reg.test(element.value)) &#123;               </div><div class="line">       element.nextElementSibling.innerText=<span class="string">"正确了"</span>;       </div><div class="line">       element.nextElementSibling.style.color=<span class="string">"green"</span>;</div><div class="line">     &#125; <span class="keyword">else</span> &#123; </div><div class="line">       element.nextElementSibling.innerText=<span class="string">"叫你嘚瑟，错了吧"</span>;                     </div><div class="line">       element.nextElementSibling.style.color=<span class="string">"red"</span>;</div><div class="line">     &#125; </div><div class="line">   &#125;; </div><div class="line"> &#125; </div><div class="line"><span class="comment">/* </span></div><div class="line">* 手机号码 * 130 131 132 133 134 135 136 137 138 139 </div><div class="line">* 147 </div><div class="line">* 150 151 152 153 154 155 156 157 158 159 </div><div class="line">* 171 177 170 176 178</div><div class="line">* 180 181 182 183 185 186 187 188 189 </div><div class="line">* [1](([35][0-9])|([4][7])|([7][01768])|([8][0-3]|[5-9]))\d&#123;8&#125;   </div><div class="line">*/ </div><div class="line"><span class="comment">//验证qq </span></div><div class="line"><span class="keyword">var</span> qqReg=<span class="regexp">/^\d&#123;5,10&#125;/</span>; </div><div class="line">checkInput(my(<span class="string">"qq"</span>),qqReg); </div><div class="line"><span class="comment">//验证手机 </span></div><div class="line"><span class="keyword">var</span> phoneReg=<span class="regexp">/^1\d&#123;8&#125;/</span>; </div><div class="line">checkInput(my(<span class="string">"phone"</span>),phoneReg); </div><div class="line"><span class="comment">//验证邮箱 </span></div><div class="line"><span class="keyword">var</span> eMailReg=<span class="regexp">/^[0-9a-zA-Z.-]+[@][0-9a-zA-Z.-]+(.+)&#123;1,2&#125;/</span>; </div><div class="line">checkInput(my(<span class="string">"e-mail"</span>),eMailReg); </div><div class="line"><span class="comment">//验证座机 </span></div><div class="line"><span class="keyword">var</span> telReg=<span class="regexp">/^[08]\d&#123;2,4&#125;[-]\d&#123;7,8&#125;/</span>; </div><div class="line">checkInput(my(<span class="string">"telephone"</span>),telReg); </div><div class="line"><span class="comment">//验证姓名 </span></div><div class="line"><span class="keyword">var</span> nameReg=<span class="regexp">/^[\u4e00-\u9fa5]&#123;2,6&#125;/</span>; </div><div class="line">checkInput(my(<span class="string">"fullName"</span>),nameReg);</div></pre></td></tr></table></figure>
+<p>5)g    全局匹配</p>
+<p> i     忽略大小写</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//去掉字符串两边的空格 trim</span></div><div class="line"><span class="keyword">var</span> str2=<span class="string">" 嘻嘻 哈哈 "</span>;</div><div class="line">str2=str2.replace(<span class="regexp">/^\s+|\s+$/g</span>,<span class="string">""</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"====="</span>+str2+<span class="string">"====="</span>);</div></pre></td></tr></table></figure>
+<p>match方法可以通过正则表达式匹配字符串中的内容,如果加上g,匹配所有,如果不加只匹配第一个=====返回值是数组</p>
+<p>exec方法====返回值是数组</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <div class="article-footer-content">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式的简单介绍和应用/">正则表达式的简单介绍和应用</a></li></ul>
+
+        <a data-url="http://yoursite.com/2016/06/03/RegExp/" data-id="cj04nawrl00013kwvmoop50qf" class="article-share-link">Share</a>
+        
+      </div>
+    </footer>
+  </div>
+  </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/11/闭包/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          闭包
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/25/HTML5原生框架/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">myJS.js</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/11/闭包/">闭包</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/03/RegExp/">RegExp</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/25/HTML5原生框架/">myJS.js</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式的简单介绍和应用/">正则表达式的简单介绍和应用</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 QJH<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/sun11/hexo-theme-paperbox" target="_blank">Paperbox</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+  <a href="#search" class="mobile-nav-link st-search-show-outputs">Search</a>
+</nav>
+  
+
+<!-- totop start -->
+<div id="totop">
+	<a title="To Top"></a>
+</div>
+<!-- totop end -->
+
+<!-- swiftype search start -->
+
+<!-- swiftype search end -->
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/lrsjng.jquery-qrcode/0.12.0/jquery.qrcode.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>
