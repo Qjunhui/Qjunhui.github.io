@@ -230,11 +230,8 @@ Javascript语言的特殊之处，就在于函数内部可以直接读取全局�
                 <p>闭包（closure）是Javascript语言的一个难点，也是它的特色，很多高级应用都要依靠闭包实现。</p>
 <h3 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h3><p>要理解闭包，首先必须理解Javascript特殊的变量作用域。<br>变量的作用域无非就是两种：全局变量和局部变量。</p>
 <p>Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量。<br>　　<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n=<span class="number">999</span>;</div><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　alert(n);</div><div class="line">　　&#125;</div><div class="line">　　f1(); <span class="comment">// 999</span></div></pre></td></tr></table></figure></p>
-<p>另一方面，在函数外部自然无法读取函数内的局部变量。</p>
-<pre><code>``` js 
-</code></pre><p>　　function f1(){<br>　　　　var n=999;<br>　　}<br>　　alert(n); // error</p>
-<pre><code>``` 
-</code></pre><p>这里有一个地方需要注意，函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！<br>　　``` js<br>    function f1(){<br>　　　　n=999;<br>　　}<br>　　f1();<br>　　alert(n); // 999</p>
+<p>另一方面，在函数外部自然无法读取函数内的局部变量。<br>    <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">var</span> n=<span class="number">999</span>;</div><div class="line">　　&#125;</div><div class="line">　　alert(n); <span class="comment">// error</span></div></pre></td></tr></table></figure></p>
+<p>这里有一个地方需要注意，函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！<br>　　``` js<br>    function f1(){<br>　　　　n=999;<br>　　}<br>　　f1();<br>　　alert(n); // 999</p>
 <pre><code>``` 
 </code></pre><h3 id="如何从外部读取局部变量"><a href="#如何从外部读取局部变量" class="headerlink" title="如何从外部读取局部变量"></a>如何从外部读取局部变量</h3><p>出于种种原因，我们有时候需要得到函数内的局部变量。但是，前面已经说过了，正常情况下，这是办不到的，只有通过变通方法才能实现。<br>那就是在函数的内部，再定义一个函数。</p>
 <pre><code>``` js 
