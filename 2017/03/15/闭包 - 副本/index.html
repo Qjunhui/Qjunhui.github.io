@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="默认的内外边距不同问题：各个浏览器默认的内外边距不同解决：
+1*&amp;#123;margin:0;padding:0;&amp;#125;
+
+水平居中的问题问题：设置 text-align: centerie6-7文本居中，嵌套的块元素也会居中ff /opera /safari /ie8文本会居中，嵌套块不会居">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="QJH">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="浏览器兼容问题"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="浅笑"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>浏览器兼容问题 - 浅笑</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>浏览器兼容问题</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-03-15
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/浏览器-兼容/">#浏览器  兼容</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ol>
+<li><p>默认的内外边距不同<br>问题：<br>各个浏览器默认的内外边距不同<br>解决：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*&#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>水平居中的问题<br>问题：<br>设置 text-align: center<br>ie6-7文本居中，嵌套的块元素也会居中<br>ff /opera /safari /ie8文本会居中，嵌套块不会居中<br>解决：<br>块元素设置<br>1、margin-left:auto;margin-right:auto<br>2、margin:0 auto;<br>3、<div align="”center”"></div></p>
+</li>
+<li><p>垂直居中的问题<br>问题：<br>在浏览器中想要垂直居中，设置vertical-align:middle; 不起作用。例如：ie6下文本与文本输入框对不齐，需设置vertical-align:middle，但是文本框的内容不会垂直居中<br>解决：<br>给容器设置一个与其高度相同的行高<br>line-height:与容器的height一样</p>
+</li>
+<li><p>关于高度问题<br>问题：<br>如果是动态地添加内容，高度最好不要定义。浏览器可以自动伸缩，然而如果是静态的内容，高度最好定好。<br>如果设定了高度，内容过多时，ie6下会自动增加高度、其他浏览器会超出边框<br>解决：<br>1.设置overflow:hidden;<br>2.高度自增height:auto!important;height:100px;</p>
+</li>
+<li><p>IE6 默认的div高度<br>问题：<br>ie6默认div高度为一个字体显示的高度，所在ie6下div的高度大于等于一个字的高度，因此在ie6下定义高度为1px的容器，显示的是一个字体的高度<br>解决：<br>为这个容器设置下列属性之一<br>1、设置overflow:hidden;<br>2、设置line-height:1px;<br>3、设置zoom:0.08</p>
+</li>
+<li><p>IE6 最小高度(宽度)的问题<br>问题：<br>ie6不支持min-height、min-width属性，默认height是最小高度，width是最小宽度。<br>解决：<br> 使用ie6不支持但其余浏览器支持的属性!important。<br>设置属性min-height:200px; height:auto !important; height:200px;</p>
+</li>
+<li><p>td高度的问题<br>问题：<br>table中td的宽度都不包含border的宽度，但是oprea和ff中td的高度包含了border的高度<br>解决：</p>
+<pre><code>设置line-height和height一样。在ie中如果td中的没有内容，那么border将不会显示
+</code></pre></li>
+<li><p>div嵌套p时，出现空白行<br>问题：<br>div中显示</p><p>文本</p>，ff、oprea、Chrome：top和bottom都会出现空白行，但是在ie下不会出现空白行。<br>解决：<br>设置p的margin:0px，再设置div的padding-top和padding-bottom<p></p>
+</li>
+<li><p>IE6-7图片下面有空隙的问题<br>问题：<br>块元素中含有图片时，ie6-7中会出现图片下有空隙<br>解决：<br>1、在源代码中让和<img>在同一行<br>2、将图片转换为块级对象display:block;<br>3、设置图片的垂直对齐方式 vertical-align:top/middle/bottom<br>4、改变父对象的属性，如果父对象的宽、高固定，图片大小随父对象而定，那么可以对父元素设置： overflow:hidden;<br>5、设置图片的浮动属性  float:left;</p>
+</li>
+<li><p>IE6双倍边距的问题<br>问题：<br>ie6中设置浮动，同时又设置margin时，会出现双倍边距的问题<br>例float:left;width:100px;margin:0 100px;<br>解决：<br>   设置display:inline;</p>
+</li>
+<li><p>IE6 width为奇数，右边多出1px的问题<br>问题：<br>父级元素采用相对定位，且宽度设置为奇数时，子元素采用绝对定位，在ie6中会出现右侧多出1像素<br>解决：<br>将宽度的奇数值改成偶数</p>
+</li>
+<li><p>IE6两个层之间3px的问题<br>问题：<br>   左边层采用浮动，右边没有采用浮动，这时在ie6中两层之间就会产生3像素的间距<br>解决：<br>1、右边层也采用浮动  float<br>2、左边层添加属性 margin-right:-3px;</p>
+</li>
+<li><p>IE6 子元素绝对定位的问题<br>问题：<br>   父级元素使用padding后，子元素使用绝对定位，不能精确定位<br>解决：<br>   在子元素中设置  _left:-20px; _top:-1px;</p>
+</li>
+<li><p>显示手型cursor:hand<br>问题：<br>  ie6/7/8、opera      都支持<br>但是safari 、 ff 不支持<br>解决：<br>写成 cursor:pointer;  (所有浏览器都能识别)  </p>
+</li>
+<li><p>IE6-7 line-height失效的问题<br>问题：<br>  在ie中img与文字放一起时， line-height不起作用<br>解决：<br>都设置成float</p>
+</li>
+<li><p>td自动换行的问题<br>问题：<br>Table宽度固定，td自动换行<br>解决：<br>设置Table的table-layout:fixed，td的word-wrap:break-word</p>
+</li>
+<li><p>子容器浮动后，父容器扩展问题<br>问题：<br>子容器都float以后，父容器没有设定高度,父容器将不会扩展<br>解决：<br>只需要添加一个clear:both的div，代码如下：</p>
+<div style="border:1px solid#333;width:204px"><br><divstyle="width:100px;border:1px solid="" #333;="" float:left;="" "="">子容器a</divstyle="width:100px;border:1px></div><br><divstyle="width:100px;border:1px solid="" #333;="" float:left;"="">子容器b<br><divstyle="clear:both"><br>
+</divstyle="clear:both"></divstyle="width:100px;border:1px></li>
+<li><p>透明png图片会带背景色<br>问题：<br>在ie6下透明的png图片会带一个背景色<br>解决：<br>background-image: url(icon_home.png);<br>background-repeat: no-repeat;<br>_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=’icon_home.png’);<br>_background-image: none;</p>
+</li>
+<li><p>list-style-position默认值的问题<br>问题：<br>ie下list-style-position默认为inside,  firefox默认为outside<br>解决：<br>css中指定为outside即可解决兼容性问题</p>
+</li>
+<li><p>list-style-image准确定位的问题<br>问题：<br>   li前设置图片时，图片与其后的文字对齐问题<br>解决：<br>1、采用背景定位 和 字符缩进的方法<br>background:url() no-repeat left center;text-index:16px;<br>2、采用相对定位方法<br>li 设置list-style:url();<br>li的子元素position:relative;top:-5px;</p>
+</li>
+<li><p>ul标签默认值的问题<br>问题：<br>   ul标签在ff中默认是有padding值的,而在ie中只有margin有值<br>解决：<br>   定义ul{margin:0;padding:0;}就能解决大部分问题</p>
+</li>
+<li><p>IE中li指定高度后，出现排版错误<br>问题：<br>在ie下如果为li指定高度可能会出现排版错位<br>解决：<br>   设置line-height</p>
+</li>
+<li><p>ul或li浮动后，显示在div外<br>问题：<br>div中的ul或li设置float以后，都不在div中<br>解决：<br>必须在ul标签后加<div style="clear:both"></div>来闭合外层div</p>
+</li>
+<li><p>ul浮动后，margin变大<br>问题：<br>ul设置 float后，在ie中margin将变大<br>解决：<br>设置ul的display:inline，li的list-style-position:outside</p>
+</li>
+<li><p>li浮动后，margin变大<br>问题：<br>li设置 float后，在ie中margin将变大<br>解决：<br>设置li的display:inline</p>
+</li>
+<li><p>嵌套使用ul、li的问题<br>问题：<br>ie的bug，嵌套使用ul、li时，里层的li设置float以后，外层li不设置float, 里面的ul顶部和它外面的li总是有一段间距<br>解决：<br>设置里面的ul的zoom:1</p>
+</li>
+<li><p>IE6-7 li底部有3px的问题<br>问题：<br>   这个bug产生的充要条件是li的子元素浮动并且li设置了以下CSS属性之一：width、height、zoom、padding-top、padding-bottom、margin-top、margin-bottom。<br>解决：<br>1、div设置clear:left|both，这时li不能设置width、height、zoom。<br>2、li设置float:left，这时li可以设置width、height、zoom。<br>3、li设置clear:left|both，这时li不能设置width、height、zoom。<br>4、IE6/IE7的这个Bug可以通过给li中的div设置vertical-align:top|middle|bottom解决。</p>
+</li>
+<li><p>IE6 垂直列表间隙的问题<br>问题：<br>   li中有a且设置display:block时，ie6中列表间会出现空隙<br>解决：<br>1、li中加display:inline;<br>2、li使用float 然后 clear:both;<br>3、给包含的文本末尾添加一个空格<br>4、设置width</p>
+</li>
+<li><p>IE6 列表背景颜色失效的问题<br>问题：<br>当父元素设置position:relative;时，在ie6中第一个ul、ol、dl的背景颜色失效<br>解决：<br>   ul、ol、dl 都设置为position:relative;</p>
+</li>
+<li><p>IE6-7 列表背景颜色失效的问题2<br>问题：<br>做横向导航栏时，ul设置为float且有背景色，li设置为float。ie6-7背景颜色失效<br>解决：<br>很多ie的bug都可以通过触发layout来解决 ul添加属性<br>1、height:1%;<br>2、float:left;<br>3、zoom:1;</p>
+</li>
+<li><p>列表不能换行的问题<br>问题：<br>   li设置为浮动，后面的li紧随其后，不能换行<br>解决：<br>1、为这个ul定义合适的宽高<br>2、给包含这个ul 的父div定义合适的宽高。</p>
+</li>
+<li><p>li中的内容以省略号显示<br>问题：<br>li中内容超过长度时，想以省略号显示， 此方法适用于ie6-7-8、opera、safari浏览器<br>ff浏览器不支持<br>解决：<br>li{width:200px;white-space:nowrap;text-overflow:ellipsis;<br>-o-text-overflow:ellipsis; overflow:hidden; }</p>
+</li>
+<li><p>超链接访问过后hover样式不出现的问题<br>问题：<br>   点击超链接后，hover、active样式没有效果<br>解决：<br>   改变CSS属性的排列顺序: L-V-H-A</p>
+</li>
+<li><p>禁用中文输入法的问题<br>问题：<br>   不能在输入框中输入汉字<br>解决：<br>只在ie系列和ff中有效<br>ime-mode:disabled    (但可以粘贴)<br>禁用粘贴：<br>onpaste=”return false”</p>
+</li>
+<li><p>除去滚动条的问题<br>问题：<br>   隐藏滚动条<br>解决：<br>1、只有ie6-7支持<body scroll="no"><br>2、除ie6-7不支持 body{overflow:hidden}<br>3、所有浏览器 html{overflow:hidden}</body></p>
+</li>
+<li><p>让层显示在FLASH之上<br>问题：<br>   想让层的内容显示在flash上<br>解决：<br>把FLASH设置透明<br>1、<param name=" wmode " value="transparent"><br>2、<param name="wmode" value="opaque"></p>
+</li>
+<li><p>去除链接虚线边框的问题<br>问题：<br>当点击超链接后，ie6/7/8  ff会出现虚线边框 ,而opera、safari没有虚线边框<br>解决：<br>ie6/7中 设置为a {blr:expression_r(this.onFocus=this.blur()) }<br>ie8 和 ff 都不支持expression 在ie8 、ff中设置为  :focus { outline: none; }</p>
+</li>
+<li><p>css滤镜的问题<br>问题：<br>css滤镜只在ie中有效，Firefox, Safari(WebKit), Opera只能够设置透明，它们不支持滤镜filter，无法实现图片切换中间变换的效果，只能通过透明度来设置。<br>解决：<br>   ff中设置透明度   -moz-opacity:0.10; opacity:0.6;<br>ie中只设置filter:alpha(opacity=50);时，ie6-7失效，还要设置<br>1、zoom:1;  2、width:100%;</p>
+</li>
+<li><p>IE6背景闪烁的问题<br>问题：<br>   链接、按钮用CSS sprites作为背景，在ie6下会有背景图闪烁的现象。原因是:IE6没有将背景图缓存，每次触发hover的时候都会重新加载<br>解决：<br>可以用JavaScript设置ie6缓存这些图片：<br>document.execCommand(“BackgroundImageCache”,false,true);</p>
+</li>
+<li><p>出现重复文字的问题<br>问题：<br><div style="width:400px"><br><div style="float:left"></div><br>&lt;!– _ –&gt;<br><div style="float:right;width:400px">↓这就是多出来的那只猪</div><br></div><br>解决：<br>1、  改变结构，不出现【一个容器包含2两个具有“float”样式的子容器】的结构。<br>2、减小第二个容器的宽度，使父容器宽度减去第二个容器宽度的值大于3<br>3、去掉所有的注释。<br>4、修正注释的写法。<!--[if!IE]>这里是注释内容<![endif]--><br>5、在第二个容器后面加一个或者多个<divstyle="clear">来解决。</divstyle="clear"></p>
+</li>
+<li><p>ff、chrome绝对定位无效<br>问题：<br>在IE给td设置position:relative，然后给它包含的一个容器使用position:absolute进行定位是有效的，但在FF和Chrome下却不可以。<br>解决：<br>设置td的display:block。</p>
+</li>
+<li><p>IE6 绝对定位的问题<br>问题：<br><div style="position:relative;border:1px solid orange;text-align:center;"><br><div style="position:absolute;top:0;left:0;
+background:#CCC;">dovapour</div><br><a href="#" title="vapour的blog">内容</a><br></div><br>解决：<br>left的定位错误问题<br>1、给父层设置zoom:1触发layout。<br>2、给父层设置宽度width</p>
+</li>
+</ol>
+<p>bottom的定位错误问题<br>1、给父层设置zoom:1触发layout。<br>2、给父层设置高度height</p>
+<ol>
+<li><p>子容器宽度大于父容器宽度时，内容超出<br>问题：<br>子DIV的宽度和父DIV的宽度都已经定义，在IE6中如果其子DIV的宽度大于父DIV的宽度，父DIV的宽度将会被扩展，在其他浏览器中父DIV的宽度将不会扩展，子DIV将超出父DIV<br>解决：<br>设置overflow:hidden，子DIV将不会超出父DIV。</p>
+</li>
+<li><p>float的div闭合的问题<br>问题：<br>例如：<div id="”floatA”"><div id="”floatB”"><div id="”NOTfloatC”">这里的NOTfloatC并不希望继续平移，而是希望往下排。(其中floatA、floatB的属性已经设置为float:left;)<br>这段代码在IE中毫无问题，问题出在其他浏览器中。原因是NOTfloatC并非float标签，必须将float标签闭合。<br>解决：<br>在 &lt;#div class=”floatB”&gt; &lt;#div class=”NOTfloatC”&gt;之间加上 &lt;#div class=”clear”&gt;这个div一定要注意位置，而且必须与两个具有float属性的div同级，之间不能存在嵌套关系，否则会产生异常。并且将clear这种样式定义为为如下即可：.clear{ clear:both;}</div></div></div></p>
+</li>
+<li><p>单选框、复选框与后面的文字对不齐<br>问题：<br> 单选框、复选框与后面的文字对不齐。<br>解决：<br>.align{font-size:12px;}<br>.align input{ display:block; float:left;}<br>.align label{ display:block; float:left;padding-top:3px; *padding-top:5px;}</p>
+</li>
+</ol>
+<p>需注意的问题：</p>
+<ol>
+<li>设置padding后高度和宽带都会增加<br>说明：<pre><code>除了ie5.5，其他所有浏览器中，设置padding以后高度和宽带都会增加
+</code></pre></li>
+<li>使用XHTML 1.0Transitional后，div宽度<br>说明：<pre><code>在使用XHTML 1.0Transitional以后div宽度都不包含border的宽度了，设置宽度的时候需要注意下。
+</code></pre></li>
+<li>外层相对定位，内层绝对定位<br>说明：<br>ie6下，外层div的postion:relative，并设置text-align，内层div的postion: absolute，这时内层的位置是相对于text-align而言的<br>例如：<div style="position:relative;border:1px solid orange;text-align:center;zoom:1"> position:relative<br><div style="position:absolute;top:0;left:0;background:#CCC;">position:absolute</div><br></div></li>
+<li>显示的大小不一致<br>说明：<br>默认字本显示问题，导致 显示的大小不一致，在ie下比较小一点，其他的浏览器都一致，当你使用了 造成问题时请注意。</li>
+<li>边框重叠说明<br>说明：<br>为 table、td 都指定了边框后，然后使用border-collapse:collapse让边框重叠，可以看出在发生重叠时，Firefox是用 td 覆盖 table 的，而 IE 是用 table 覆盖 td 的。使用时候需要注意。</li>
+<li>设置td padding的说明<br>说明：<br>设置td的padding以后高度和宽带都会增加,padding-left和padding-right的效果都一样增加了td的宽带，但是padding-top和padding-bottom的效果不一样。最好不要使用td的padding-top和padding-bottom</li>
+<li>ul设置的说明<br>说明：<br>ul一般设置：list-style-type:none;margin:0px;padding:0px；li一般设置：list-style-type:none;list-style-position:outside</li>
+<li>使一个层垂直居中于浏览器中<br>说明：<br>使用百分比绝对定位,与外补丁负值的技巧,负值的大小为其自身宽度高度除以二<br>div {<br>position:absolute; top:50%; lef:50%; margin:-100px 0 0 -100px;<br>width:200px; height:200px; border:1px solidred;<br>}</li>
+<li>万能 float 闭合<br>说明：<br>可以用这个解决多个div对齐时的间距不对，将以下代码加入Global CSS 中,给需要闭合的div加上 class=”clearfix” 即可<style>
+
+</li>
+</ol>
+<p>.clearfix:after { content:”.”;display:block;height:0; clear:both;visibility:hidden;<br>}<br>.clearfix {<br>    display:inline-block;<br>}</p>
+<p>.clearfix {display:block;}</p>
+<p></style><p></p>
+<ol>
+<li>触发layout<br>说明：<br>IE6中很多Bug都可以通过触发layout得到解决.下列的CSS属性或取值会让一个元素获得layout：<br>position:absolute 绝对定位元素的包含区块(containingblock)就会经常在这一方面出问题<br>float:left|right 由于layout元素的特性，浮动模型会有很多怪异的表现<br>display:inline-block 当一个内联级别的元素需要layout的时候就往往符用到它，这也可能也是这个CSS属性的唯一效果—-让某个元素有layout<br>width: 除auto外的任何值<br>height: 除auto外的任何值<br>zoom: 除auto外的任何值<br>11、如何使连续长字段自动换行<br>ff最新版本word-wrap:break-word;就可以了<br>ff旧版本 还要使用javascript完成文字换行<style type="text/css">
+div {
+  width:300px;
+  word-wrap:break-word;
+  border:1px solid red;
+   }
+</style>
+
+</li>
+</ol>
+<p><scripttype="text javascript"=""><br>function toBreakWord(intLen){<br>varobj=document.getElementByIdx_x(“ff”);<br>var strContent=obj.innerHTML;<br>var strTemp=””;<br>while(strContent.length&gt;intLen){<br>strTemp+=strContent.substr(0,intLen)+” “;<br>strContent=strContent.substr(intLen,strContent.length);<br>}<br>strTemp+=” “+strContent;<br>obj.innerHTML=strTemp;<br>}<br>if(document.getElementByIdx_x &amp;&amp;  !document.all)  toBreakWord(37)</scripttype="text></p>
+<p>12、设置滚动条颜色 只对ie系列有效 在html中 而不是设置body</p>
+<p><style type="text/css"><br>html {<br>      scrollbar-face-color:#f6f6f6;<br>      scrollbar-highlight-color:#fff;<br>      scrollbar-shadow-color:#eeeeee;<br>      scrollbar-3dlight-color:#eeeeee;<br>      scrollbar-arrow-color:#000;<br>      scrollbar-track-color:#fff;<br>      scrollbar-darkshadow-color:#fff;<br>       }<br></style><br>IE不支持float：inherit overflow:hidden有2个用法，一个是隐藏溢出，另一个是清除浮动。</p>
+<p><div>, <p>, </p><h1>,<form>, <ul> 和 <li>是块元素的例子<br><span>, <a>, <label>,<input>, <img>, <strong> 和<em>是inline元素</em></strong></label></a></span></li></ul></form></h1></div></p>
+<p><body oncontextmenu="returnfalse" ondragstart="return false" tstart="returnfalse" scroll="auto"><br>这行代码放在body中，去掉了页面鼠标右键快捷菜单，达到防止图片另存为的目的。</body></p>
+<p>javascript部分</p>
+<ol>
+<li><p>document.form.item 问题<br>问题：<br>代码中存在 document.formName.item(“itemName”) 这样的语句，不能在FF下运行<br>解决方法：<br>改用 document.formName.elements[“elementName”]</p>
+</li>
+<li><p>集合类对象问题<br>问题：<br>代码中许多集合类对象取用时使用()，IE能接受，FF不能<br>解决方法：<br>改用 [] 作为下标运算，例：<br>document.getElementsByName(“inputName”)(1) 改为document.getElementsByName(“inputName”)[1]</p>
+</li>
+<li><p>window.event<br>问题：<br>使用 window.event 无法在FF上运行<br>解决方法：<br>FF的 event 只能在事件发生的现场使用，此问题暂无法解决。可以把 event 传到函数里变通解决：<br>onMouseMove = “functionName(event)”<br>function functionName (e) {<br> e = e || window.event;<br> ……<br>}</p>
+</li>
+<li><p>HTML对象的 id 作为对象名的问题<br>问题：<br>在IE中，HTML对象的 ID 可以作为 document 的下属对象变量名直接使用，在FF中不能<br>解决方法：<br>使用对象变量时全部用标准的 getElementById(“idName”)</p>
+</li>
+<li><p>用 idName 字符串取得对象的问题<br>问题：<br>在IE中，利用 eval_r(“idName”) 可以取得 id 为 idName 的HTML对象，在FF中不能<br>解决方法：<br>用 getElementById(“idName”) 代替eval_r(“idName”)</p>
+</li>
+<li><p>变量名与某HTML对象 id 相同的问题<br>问题：<br>在FF中，因为对象 id 不作为HTML对象的名称，所以可以使用与HTML对象 id 相同的变量名，IE中不能<br>解决方法：<br>在声明变量时，一律加上 var ，以避免歧义，这样在IE中亦可正常运行<br>最好不要取与HTML对象 id 相同的变量名，以减少错误</p>
+</li>
+<li><p>event.x 与 event.y 问题<br>问题：<br>在IE中，event 对象有x,y属性，FF中没有<br>解决方法：<br>在FF中，与 event.x 等效的是 event.pageX ，但event.pageX IE中没有<br>故采用 event.clientX 代替 event.x ，在IE中也有这个变量<br>event.clientX 与 event.pageX 有微妙的差别，就是滚动条<br>要完全一样，可以这样：<br>mX = event.x ? event.x : event.pageX;<br>然后用 mX 代替 event.x</p>
+</li>
+<li><p>关于frame<br>问题：<br>在IE中可以用 window.testFrame 取得该frame，FF中不行<br>解决方法：<br>window.top.document.getElementByIdx_x(“testFrame”).src = ‘xx.htm’<br>window.top.frameName.location = ‘xx.htm’</p>
+</li>
+<li><p>取得元素的属性<br>在FF中，自己定义的属性必须 getAttribute() 取得</p>
+</li>
+<li><p>在FF中没有 parentElement，parement.children 而用 parentNode，parentNode.childNodes<br>问题：<br>childNodes 的下标的含义在IE和FF中不同，FF的 childNodes 中会插入空白文本节点<br>解决方法：<br>可以通过 node.getElementsByTagName_r() 来回避这个问题<br>问题：<br>当html中节点缺失时，IE和FF对 parentNode 的解释不同，例如：<br><form><br><table><br><input><br></table><br></form><br>FF中 input.parentNode 的值为form，而IE中 input.parentNode 的值为空节点<br>问题：<br>FF中节点自己没有 removeNode 方法<br>解决方法：<br>必须使用如下方法 node.parentNode.removeChild(node)</p>
+</li>
+<li><p>const 问题<br>问题：<br>在IE中不能使用 const 关键字<br>解决方法：<br>以 var 代替</p>
+</li>
+<li><p>body 对象<br>FF的 body 在 body 标签没有被浏览器完全读入之前就存在，而IE则必须在 body 完全被读入之后才存在<br>这会产生在IE下，文档没有载入完时，在body上appendChild会出现空白页面的问题<br>解决方法：<br>一切在body上插入节点的动作，全部在onload后进行</p>
+</li>
+<li><p>url encoding<br>问题：<br>一般FF无法识别js中的&amp;<br>解决方法：<br>在js中如果书写url就直接写&amp;不要写&amp;</p>
+</li>
+<li><p>nodeName 和 tagName 问题<br>问题：<br>在FF中，所有节点均有 nodeName 值，但 textNode 没有 tagName 值，在IE中，nodeName 的使用有问题<br>解决方法：<br>使用 tagName，但应检测其是否为空</p>
+</li>
+<li><p>元素属性<br>IE下 input.type 属性为只读，但是FF下可以修改</p>
+</li>
+<li><p>document.getElementsByName() 和 document.all[name] 的问题<br>问题：<br>在IE中，getElementsByName()、document.all[name] 均不能用来取得 div 元素<br>是否还有其它不能取的元素还不知道（这个问题还有争议，还在研究中）</p>
+</li>
+<li><p>调用子框架或者其它框架中的元素的问题<br>在IE中，可以用如下方法来取得子元素中的值<br>document.getElementByIdx_x(“frameName”).(document.)elementName<br>window.frames[“frameName”].elementName<br>在FF中则需要改成如下形式来执行，与IE兼容：<br>window.frames[“frameName”].contentWindow.document.elementName<br>window.frames[“frameName”].document.elementName</p>
+</li>
+<li><p>对象宽高赋值问题<br>问题：<br>FireFox中类似 obj.style.height = imgObj.height 的语句无效<br>解决方法：<br>统一使用 obj.style.height = imgObj.height + “px”;</p>
+</li>
+<li><p>innerText的问题<br>问题：<br>innerText 在IE中能正常工作，但是 innerText 在FireFox中却不行<br>解决方法：<br>在非IE浏览器中使用textContent代替innerText</p>
+</li>
+<li><p>event.srcElement和event.toElement问题<br>问题：<br>IE下，even对象有srcElement属性，但是没有target属性；Firefox下，even对象有target属性，但是没有srcElement属性<br>解决方法：<br>var source = e.target || e.srcElement;<br>var target = e.relatedTarget || e.toElement;</p>
+</li>
+<li><p>禁止选取网页内容<br>问题：<br>FF需要用CSS禁止，IE用JS禁止<br>解决方法：<br>IE: obj.onselectstart = function() {return false;}<br>FF: -moz-user-select:none;</p>
+</li>
+<li>捕获事件<br>问题：<br>FF没有setCapture()、releaseCapture()方法<br>解决方法：<br>IE:<br>obj.setCapture();<br>obj.releaseCapture();<br>FF:<br>window.captureEvents(Event.MOUSEMOVE|Event.MOUSEUP);<br>window.releaseEvents(Event.MOUSEMOVE|Event.MOUSEUP);<br>if (!window.captureEvents) {<br>   o.setCapture();<br>}else {<br>   window.captureEvents(Event.MOUSEMOVE|Event.MOUSEUP);<br>}<br>if (!window.captureEvents) {<br>   o.releaseCapture();<br>}else {<br>   window.releaseEvents(Event.MOUSEMOVE|Event.MOUSEUP);<br>}</li>
+</ol>
+<p>一.用div+css网站布局的好处<br>1：表现和内容相分离<br>　　将设计部分剥离出来放在一个独立样式文件中，HTML文件中只存放文本信息。<br>2：提高搜索引擎对网页的索引效率<br>　　用只包含结构化内容的HTML代替嵌套的标签，搜索引擎将更有效地搜索到你的网页内容，并可能给你一个较高的评价。<br>3：提高页面浏览速度<br>　　对于同一个页面视觉效果，采用CSS+DIV重构的页面容量要比TABLE编码的页面文件容量小得多，前者一般只有后者的1/2大小。<br>4：易于维护和改版<br>　　你只要简单的修改几个CSS文件就可以重新设计整个网站的页面。从以上的描述来看，采用CSS+DIV对网站重构可以大大提升网站用户与搜索引擎的友好度,CSS+DIV所以成为目前网页布局主流.</p>
+<p>二.用表格table对seo影响<br>1、简介：为何使用表格排版是不明智的?<br>　　表格之所以存在于 HTML 中，只是为了一个目的：显示表格状的数据。然而此后的 border=”0” 使得设计师可以将图片和文本放在这无形的网格中。迄今为止，表格仍然主导着视觉丰富的网站的设计方式，但它却阻碍了一种更好的、更有亲和力的、更灵活的，而且功能更强大的网站设计方法。<br>2、表格带来的问题<br>　　把格式数据混入你的内容中,这使得文件的大小无谓地变大，而用户访问每个 页面时都必须下载一次这样的格式信息。</p>
+<p>闭包（closure）是Javascript语言的一个难点，也是它的特色，很多高级应用都要依靠闭包实现。</p>
+<h3 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h3><p>要理解闭包，首先必须理解Javascript特殊的变量作用域。<br>变量的作用域无非就是两种：全局变量和局部变量。</p>
+<p>Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量。<br>　　<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n=<span class="number">999</span>;</div><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　alert(n);</div><div class="line">　　&#125;</div><div class="line">　　f1(); <span class="comment">// 999</span></div></pre></td></tr></table></figure></p>
+<p>另一方面，在函数外部自然无法读取函数内的局部变量。<br>    <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">var</span> n=<span class="number">999</span>;</div><div class="line">　　&#125;</div><div class="line">　　alert(n); <span class="comment">// error</span></div></pre></td></tr></table></figure></p>
+<p>这里有一个地方需要注意，函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！<br>　　<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　n=<span class="number">999</span>;</div><div class="line">　　&#125;</div><div class="line">　　f1();</div><div class="line">　　alert(n); <span class="comment">// 999</span></div></pre></td></tr></table></figure></p>
+<h3 id="如何从外部读取局部变量"><a href="#如何从外部读取局部变量" class="headerlink" title="如何从外部读取局部变量"></a>如何从外部读取局部变量</h3><p>出于种种原因，我们有时候需要得到函数内的局部变量。但是，前面已经说过了，正常情况下，这是办不到的，只有通过变通方法才能实现。<br>那就是在函数的内部，再定义一个函数。<br>    <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">var</span> n=<span class="number">999</span>;</div><div class="line">　　　　<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　alert(n); <span class="comment">// 999</span></div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div><div class="line">    <span class="string">``</span><span class="string">` </span></div><div class="line">在上面的代码中，函数f2就被包括在函数f1内部，这时f1内部的所有局部变量，对f2都是可见的。但是反过来就不行，f2内部的局部变量，对f1就是不可见的。这就是Javascript语言特有的"链式作用域"结构（chain scope），子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。</div><div class="line"></div><div class="line">既然f2可以读取f1中的局部变量，那么只要把f2作为返回值，我们不就可以在f1外部读取它的内部变量了吗！</div><div class="line">　　`<span class="string">``</span> js</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">var</span> n=<span class="number">999</span>;</div><div class="line">　　　　<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　alert(n); </div><div class="line">　　　　&#125;</div><div class="line">　　　　<span class="keyword">return</span> f2;</div><div class="line">　　&#125;</div><div class="line">　　<span class="keyword">var</span> result=f1();</div><div class="line">　　result(); <span class="comment">// 999</span></div><div class="line">    <span class="string">``</span><span class="string">` </span></div><div class="line"></div><div class="line">### 闭包的概念</div><div class="line">上一节代码中的f2函数，就是闭包。</div><div class="line">各种专业文献上的"闭包"（closure）定义非常抽象，很难看懂。我的理解是，闭包就是能够读取其他函数内部变量的函数。</div><div class="line">由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成"定义在一个函数内部的函数"。</div><div class="line">所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。</div><div class="line"></div><div class="line">### 闭包的用途</div><div class="line">闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。</div><div class="line">怎么来理解这句话呢？请看下面的代码。</div><div class="line">    `<span class="string">``</span> js </div><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">var</span> n=<span class="number">999</span>;</div><div class="line">　　　　nAdd=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;n+=<span class="number">1</span>&#125;</div><div class="line">　　　　<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　alert(n);</div><div class="line">　　　　&#125;</div><div class="line">　　　　<span class="keyword">return</span> f2;</div><div class="line">　　&#125;</div><div class="line">　　<span class="keyword">var</span> result=f1();</div><div class="line">　　result(); <span class="comment">// 999</span></div><div class="line">　　nAdd();</div><div class="line">　　result(); <span class="comment">// 1000</span></div></pre></td></tr></table></figure></p>
+<p>在这段代码中，result实际上就是闭包f2函数。它一共运行了两次，第一次的值是999，第二次的值是1000。这证明了，函数f1中的局部变量n一直保存在内存中，并没有在f1调用后被自动清除。<br>为什么会这样呢？原因就在于f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。<br>这段代码中另一个值得注意的地方，就是”nAdd=function(){n+=1}”这一行，首先在nAdd前面没有使用var关键字，因此nAdd是一个全局变量，而不是局部变量。其次，nAdd的值是一个匿名函数（anonymous function），而这个匿名函数本身也是一个闭包，所以nAdd相当于是一个setter，可以在函数外部对函数内部的局部变量进行操作。</p>
+<h3 id="使用闭包的注意点"><a href="#使用闭包的注意点" class="headerlink" title="使用闭包的注意点"></a>使用闭包的注意点</h3><p>1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
+<h3 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h3><p>如果你能理解下面两段代码的运行结果，应该就算理解闭包的运行机制了。<br>代码片段一。<br>    <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">　　<span class="keyword">var</span> name = <span class="string">"The Window"</span>;</div><div class="line">　　<span class="keyword">var</span> object = &#123;</div><div class="line">　　　　<span class="attr">name</span> : <span class="string">"My Object"</span>,</div><div class="line">　　　　<span class="attr">getNameFunc</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　　　<span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">　　　　　　&#125;;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;;</div><div class="line">　　alert(object.getNameFunc()());</div><div class="line">    <span class="string">``</span><span class="string">` </span></div><div class="line"></div><div class="line">代码片段二。</div><div class="line">    `<span class="string">``</span> js</div><div class="line">　　<span class="keyword">var</span> name = <span class="string">"The Window"</span>;</div><div class="line">　　<span class="keyword">var</span> object = &#123;</div><div class="line">　　　　<span class="attr">name</span> : <span class="string">"My Object"</span>,</div><div class="line">　　　　<span class="attr">getNameFunc</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　<span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　　　　　<span class="keyword">return</span> that.name;</div><div class="line">　　　　　　&#125;;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;;</div><div class="line">　　alert(object.getNameFunc()());</div></pre></td></tr></table></figure></p>
+</li></ol>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 QJH<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
