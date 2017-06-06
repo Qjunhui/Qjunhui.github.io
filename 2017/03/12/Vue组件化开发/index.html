@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="null"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Vue组件化开发 | 浅笑</title><link rel="stylesheet" type="text/css" href="//fonts.css.network/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Vue组件化开发</h1><a id="logo" href="/.">浅笑</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Start</i></a><a href="/archives/"><i class="fa fa-archive"> Archiv</i></a><a href="/about/"><i class="fa fa-user"> Über</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Search"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Vue组件化开发</h1><div class="post-meta"><span class="date">Mar 12, 2017</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i> Hits</i></i></span><a href="/2017/03/12/Vue组件化开发/#comments" class="comment-count">Gästebuch</a></div><div class="post-content"><p>组件其实就是一个拥有样式、动画、js逻辑、HTML结构的综合块。</p>
+<p>前端组件化确实让大的前端团队更高效的开发前端项目。而作为前端比较流行的框架之一，Vue的组件和也做的非常彻底，而且有自己的特色。尤其是她单文件组件开发的方式更是非常方便，而且第三方工具支持也非常丰富，社区也非常活跃，第三方组件也呈井喷之势</p>
+<p>##全局扩展方法Vue.extend</p>
+<p>Vue提供了一个全局的API，Vue.extend可以帮助我们对Vue实例进行扩展，扩展完了之后，就可以用此扩展对象创建新的Vue实例了。</p>
+<p>类似于继承的方式。</p>
+<p>语法：<code>Vue.extend( options )</code></p>
+<p>参数：<code>{Object} options</code></p>
+<p>用法：使用基础 Vue 构造器，创建一个“子类”。参数是一个包含组件选项的对象</p>
+<p>下面是一个官网demo：</p>
+<pre><code>&lt;div id=&quot;mount-point&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+   // 创建构造器
+   var Profile = Vue.extend({
+       // 新的对象的模板，所有子实例都会拥有此模板
+       template: &apos;&lt;p&gt;{{firstName}} {{lastName}} aka {{alias}}&lt;/p&gt;&apos;,
+       data: function () {   // 创建的Vue实例时，data可以是Object 也可以是Function，但是在扩展
+          return {            // 的时候，data必须是一个函数，而且要返回值奥。
+              firstName: &apos;Walter&apos;,
+              lastName: &apos;White&apos;,
+              alias: &apos;Heisenberg&apos;
+          }
+       }
+    })
+&lt;/script&gt;
+// 创建 Profile 实例，并挂载到一个元素上。
+new Profile().$mount(&apos;#mount-point&apos;)
+// .$mount() 方法跟设置 el属性效果是一致的。
+</code></pre><p>结果如下：</p>
+<pre><code>&lt;p&gt;Walter White aka Heisenberg&lt;/p&gt;
+</code></pre><p>当然除了官方提供的方法外你还可以使用Vue对象的prototype直接实现扩展</p>
+<pre><code>import http from &quot;../public/tools/http.js&quot;
+Vue.prototype.getDataGet = function(url, callback) {
+    this.$http.get(http.host + url).then(res =&gt; {
+       console.log(http.host + url)
+       callback(res.body)
+    }, err =&gt; {
+       console.log(err)
+    })
+}
+Vue.prototype.getDataPsst = function(url, data, callback) {
+    this.$http.post(http.host + url, data, { emulateJSON: true }).then(res =&gt; {
+    callback(res.body)
+    }, err =&gt; {
+        console.log(err)
+    })
+}
+</code></pre><p>使用这种方法简单粗暴建议使用官方提供的 Vue.extend()</p>
+<p>##创建组件和注册组件</p>
+<p>当然上面的方式只是能让我们继承Vue实例做一些扩展的动作。看Vue中如何创建一个组件并注册使用。</p>
+<p>Vue提供了一个全局注册组件的方法：Vue.component。</p>
+<p>语法： <code>Vue.component( id, [definition] )</code></p>
+<p>参数：<br>  <code>{string} id</code>    组件的名字，可以当HTML标签用，注意组件的名字都是小写，而且最好有横线和字母组合。<br>  <code>{Function | Object} [definition]</code>  组件的设置</p>
+<p>用法：</p>
+<p>注册或获取全局组件。注册还会自动使用给定的id设置组件的名称</p>
+<pre><code>// 注册组件，传入一个扩展过的构造器
+Vue.component(&apos;my-component&apos;, Vue.extend({ /* ... */ }))
+// 注册组件，传入一个选项对象（自动调用 Vue.extend）
+Vue.component(&apos;my-component&apos;, { /* ... */ })
+// 获取注册的组件（始终返回构造器）
+var MyComponent = Vue.component(&apos;my-component&apos;)
+</code></pre><p>简单demo：</p>
+<pre><code>&lt;div id=&quot;example&quot;&gt;
+    &lt;!--组件直接跟普通的标签一样的使用。--&gt;
+    &lt;my-component&gt;&lt;/my-component&gt;
+&lt;/div&gt;
+</code></pre><hr>
+<pre><code>// 注册一个组件
+Vue.component(&apos;my-component&apos;, {
+   // 模板选项设置当前组件，最终输出的html模板。注意：有且只有一个根元素。
+   template: &apos;&lt;div&gt;A custom component!&lt;/div&gt;&apos;
+})
+// 创建根实例
+new Vue({
+   el: &apos;#example&apos;
+})
+</code></pre><p>那么我们注册一个组件自动帮我生成 label和radiobutton组合。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+   &lt;meta charset=&quot;UTF-8&quot;&gt;
+   &lt;title&gt;Vue入门之extend全局方法&lt;/title&gt;
+   &lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;!--组件名直接可以当标签使用。--&gt;
+        &lt;radio-tag rid=&quot;rBas&quot; txt=&quot;篮球&quot; val=&quot;1&quot;&gt;&lt;/radio-tag&gt;
+        &lt;!--组件的属性也可以使用Vue的绑定的语法，下面是动态绑定数据给子组件--&gt;
+        &lt;radio-tag :rid=&quot;demoId&quot; :txt=&quot;demoText&quot; :val=&quot;demoVal&quot;&gt;&lt;/radio-tag&gt;
+   &lt;/div&gt;
+&lt;script&gt;
+     // 定义组件模板，模板必须有且只有一个根元素。
+     var temp = &apos;&lt;div&gt;&lt;label v-bind:for=&quot;rid&quot;&gt;{{ txt }}&lt;/label&gt;&lt;input :id=&quot;rid&quot; type=&quot;radio&quot; v-bind:value=&quot;val&quot;&gt;&lt;/div&gt;&apos;;
+     // 注册一个全局的组件
+     Vue.component(&apos;radio-tag&apos;, {       // 组件的名字不能有大写字母，跟React的曲别啊。另外组件名最好是小写字母加横线组合。
+     template: temp,
+     props: [&apos;rid&apos;, &apos;txt&apos;, &apos;val&apos;],   // 设置组件的属性有哪些，定义标签的属性一致。
+     data: function () {             // 注意属性名都得是小写，不然会不认的。
+         return {                      // 在组件的定义中data必须是函数，而且必须有返回值返回{}也是可以的。
+         }
+      }
+    });
+    // 初始化一个Vue实例
+    var app = new Vue({
+        el: &apos;#app&apos;,
+        data: {
+            demoId: &apos;ft&apos;,
+            demoText: &apos;足球&apos;,
+            demoVal: 2
+        }
+    });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><strong><strong>注意点:</strong></strong></p>
+<ol>
+<li><p>组件的名字都必须是小写【其实是非必须，但是为了不麻烦就强制吧】！！！而且建议是小写字母和横线的组合比如： my-radiobtn</p>
+</li>
+<li><p>注册组件的时候，可以传入一个选项对象进行配置。其中props是设置当前组件的属性，属性也都必须小写。属性是连接父容器和子组件的桥梁。</p>
+</li>
+<li><p>注意：属性名和组件的名字都要小写啊，不然vue不会认的。</p>
+</li>
+<li><p>编写组件代码最好配合Vue的chrome插件：vue-devtool</p>
+</li>
+<li><p>组件可以返还自己的数据，但是必须是函数。data必须是Function</p>
+</li>
+</ol>
+<p>##局部注册组件</p>
+<p>全局注册组件就是使用全局API Vue.componet(id, {….})就行了，当然我们有时候需要注册一个局部模块的自己用的组件。那么就可以用下面的方式了。</p>
+<pre><code>var Child = {
+   template: &apos;&lt;div&gt;A custom component!&lt;/div&gt;&apos;
+}
+new Vue({
+    // ...
+    components: {
+        // &lt;my-component&gt; 将只在父模板可用
+        &apos;my-component&apos;: Child
+    }
+})
+</code></pre><p>##父子组件传值</p>
+<pre><code>&lt;template&gt;
+   &lt;div class=&quot;publicHeader&quot;&gt;
+        &lt;comment :name=&quot;name&quot;&gt;&lt;/comment&gt;
+   &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+   import comment from &apos;../comment/comment.vue&apos;
+   export default {
+   data(){
+       return {
+            name:&quot;QJH&quot;
+       }
+   }
+   components:{
+       comment
+   }
+}
+&lt;/script&gt;
+</code></pre></div><div class="tags"><a href="/tags/Vue/">Vue</a></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2017/03/12/Vue-router/" class="pre">Vue-router</a><a href="/2017/03/12/Vue脚手架工具/" class="next">Vue脚手架工具</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">Inhalte</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> Letzte</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue模块通讯/">Vue模块通讯</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue-filter/">Vue-filter</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue-router/">Vue-router</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue组件化开发/">Vue组件化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue脚手架工具/">Vue脚手架工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/11/Vue指令介绍/">Vue指令介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/Vue生命周期/">Vue生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/Vue介绍/">Vue介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/05/Ajax/">Ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/11/闭包/">闭包</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> Tags</i></div><div class="tagcloud"><a href="/tags/原生框架/" style="font-size: 15px;">原生框架</a> <a href="/tags/正则表达式/" style="font-size: 15px;">正则表达式</a> <a href="/tags/闭包/" style="font-size: 15px;">闭包</a> <a href="/tags/移动web/" style="font-size: 15px;">移动web</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> Archiv</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> Blogroll</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Baidu Sitemap</a> |  <a href="/atom.xml">RSS</a> |  <a href="/about/">Über</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">QJH.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","weixin","tsina","qzone","linkedin","fbook","twi","print","renren","sqq","evernotecn","bdysc","tqq","tqf","bdxc","kaixin001","tieba","douban","bdhome","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","h163","copy"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script></body></html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="null"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Vue生命周期 | 浅笑</title><link rel="stylesheet" type="text/css" href="//fonts.css.network/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Vue生命周期</h1><a id="logo" href="/.">浅笑</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Start</i></a><a href="/archives/"><i class="fa fa-archive"> Archiv</i></a><a href="/about/"><i class="fa fa-user"> Über</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Search"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Vue生命周期</h1><div class="post-meta"><span class="date">Mar 10, 2017</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i> Hits</i></i></span><a href="/2017/03/10/Vue生命周期/#comments" class="comment-count">Gästebuch</a></div><div class="post-content"><p>Vue的实例是Vue框架的入口，其实也就是前端的ViewModel，它包含了页面中的业务逻辑处理、数据模型等，当然它也有自己的一系列的生命周期的事件钩子，辅助我们进行对整个Vue实例生成、编译、挂着、销毁等过程进行js控制。</p>
+<p>##Vue实例的computed</p>
+<p>###介绍</p>
+<p>Vue的计算属性（computed)的属性会自动混入Vue的实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。这就很强大了，再计算属性中定义的函数里面可以直接使用指向了vue实例的this，异常方便的啊。</p>
+<p>###类型</p>
+<pre><code>{ 键：函数}
+
+{ [key: string]: Function | { get: Function, set: Function } }
+</code></pre><p>当然，可以省略setter,如果省略了setter，那么值就可以是普通函数，但是必须有返回值。</p>
+<p>###官方的实例</p>
+<pre><code>var vm = new Vue({
+    data: { a: 1 },
+    computed: {
+       // 仅读取，值只须为函数
+       aDouble: function () {
+           return this.a * 2
+       },
+       // 读取和设置
+       aPlus: {
+          get: function () {
+              return this.a + 1
+          },
+          set: function (v) {
+              this.a = v - 1
+          }
+       }
+    }
+})
+vm.aPlus   // -&gt; 2
+vm.aPlus = 3
+vm.a       // -&gt; 2
+vm.aDouble // -&gt; 4
+</code></pre><p>##methods</p>
+<p>###类型</p>
+<pre><code>{ [key: string]: Function }
+</code></pre><p>###详细</p>
+<p>methods 将被混入到 Vue 实例中。可以直接通过 VM 实例访问这些方法，或者在指令表达式中使用。方法中的 this 自动绑定为 Vue 实例。</p>
+<p>注意，不应该使用箭头函数来定义 method 函数 (例如 plus: () =&gt; this.a++)。理由是箭头函数绑定了父级作用域的上下文，所以 this 将不会按照期望指向 Vue 实例，this.a 将是 undefined。</p>
+<p>###示例</p>
+<pre><code>var vm = new Vue({
+   data: { a: 1 },
+   methods: {
+      plus: function () {
+         this.a++
+      }
+   }
+})
+vm.plus()
+vm.a // 2
+</code></pre><p>##watch</p>
+<p>###类型</p>
+<pre><code>{ [key: string]: string | Function | Object }
+</code></pre><p>###详细</p>
+<p>一个对象，键是需要观察的表达式，值是对应回调函数。值也可以是方法名，或者包含选项的对象。Vue 实例将会在实例化时调用 $watch()，遍历 watch 对象的每一个属性。</p>
+<p>###示例</p>
+<pre><code>var vm = new Vue({
+   data: {
+      a: 1,
+      b: 2,
+      c: 3
+   },
+   watch: {
+      // 监控a变量变化的时候，自动执行此函数
+      a: function (val, oldVal) {
+          console.log(&apos;new: %s, old: %s&apos;, val, oldVal)
+      },
+      // 深度 watcher
+      c: {
+          handler: function (val, oldVal) { /* ... */ },
+          deep: true
+      }
+   }
+})
+vm.a = 2 // -&gt; new: 2, old: 1
+</code></pre><p><strong>注意</strong></p>
+<p>不应该使用箭头函数来定义 watcher 函数 (例如 searchQuery: newValue =&gt; this.updateAutocomplete(newValue))。理由是箭头函数绑定了父级作用域的上下文，所以 this 将不会按照期望指向 Vue 实例，this.updateAutocomplete 将是 undefined。</p>
+<p>##设置el的详解</p>
+<p>###类型</p>
+<pre><code>string | HTMLElement
+</code></pre><p>限制： 只在由 new 创建的实例中遵守。</p>
+<p>###详细</p>
+<p>提供一个在页面上已存在的 DOM 元素作为 Vue 实例的挂载目标,也就是说Vue绑定数据到哪里去找。可以是CSS 选择器，也可以是一个 HTMLElement实例。</p>
+<p>在实例挂载之后， 元素可以用 vm.$el 访问。</p>
+<p>如果这个选项在实例化时有作用，实例将立即进入编译过程，否则，需要显式调用 vm.$mount() 手动开启编译。</p>
+<pre><code>// 几乎所有例子都用到这个
+var app = new Vue({
+    el: &apos;#app&apos;,
+    ...
+});
+</code></pre><p>##Vue实例的生命周期</p>
+<p>Vue实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模板、挂载Dom、渲染→更新→渲染、卸载等一系列过程，我们称这是Vue的生命周期。通俗说就是Vue实例从创建到销毁的过程，就是生命周期。</p>
+<p>在Vue的整个生命周期中，它提供了一系列的事件，可以让我们注册js方法，可以让我们达到控制整个过程的目的地，</p>
+<p>首先看看下面官网的一张生命周期的图，</p>
+<p><img src="http://wanyifeng.top/images/lifecycle-%E6%A0%87%E6%B3%A8%E7%89%88%E6%9C%AC.png" alt=""></p>
+<p>Vue提供的可以注册的钩子都在上图片的红色框标注。</p>
+<p>他们是：</p>
+<ul>
+<li>beforeCreate</li>
+</ul>
+<p>在实例初始化之后，数据观测(data observer) 和 event/watcher 事件配置之前被调用。</p>
+<ul>
+<li>created</li>
+</ul>
+<p>实例已经创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算， watch/event 事件回调。然而，挂载阶段还没开始，$el 属性目前不可见。</p>
+<ul>
+<li>beforeMount</li>
+</ul>
+<p>在挂载开始之前被调用：相关的 render 函数首次被调用。</p>
+<ul>
+<li>mounted</li>
+</ul>
+<p>el 被新创建的 vm. $el 替换，并挂载到实例上去之后调用该钩子。如果 root 实例挂载了一个文档内元素，当 mounted 被调用时 vm. $el 也在文档内。</p>
+<ul>
+<li>beforeUpdate</li>
+</ul>
+<p>数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。<br>你可以在这个钩子中进一步地更改状态，这不会触发附加的重渲染过程。</p>
+<ul>
+<li>updated</li>
+</ul>
+<p>由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。</p>
+<p>当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态，因为这可能会导致更新无限循环。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+<ul>
+<li>beforeDestroy</li>
+</ul>
+<p>实例销毁之前调用。在这一步，实例仍然完全可用。</p>
+<ul>
+<li>destroyed</li>
+</ul>
+<p>Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。<br>该钩子在服务器端渲染期间不被调用。</p>
+</div><div class="tags"><a href="/tags/Vue/">Vue</a></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2017/03/11/Vue指令介绍/" class="pre">Vue指令介绍</a><a href="/2017/03/10/Vue介绍/" class="next">Vue介绍</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">Inhalte</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> Letzte</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue模块通讯/">Vue模块通讯</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue-filter/">Vue-filter</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue-router/">Vue-router</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue组件化开发/">Vue组件化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue脚手架工具/">Vue脚手架工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/11/Vue指令介绍/">Vue指令介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/Vue生命周期/">Vue生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/Vue介绍/">Vue介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/05/Ajax/">Ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/11/闭包/">闭包</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> Tags</i></div><div class="tagcloud"><a href="/tags/原生框架/" style="font-size: 15px;">原生框架</a> <a href="/tags/正则表达式/" style="font-size: 15px;">正则表达式</a> <a href="/tags/闭包/" style="font-size: 15px;">闭包</a> <a href="/tags/移动web/" style="font-size: 15px;">移动web</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> Archiv</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> Blogroll</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Baidu Sitemap</a> |  <a href="/atom.xml">RSS</a> |  <a href="/about/">Über</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">QJH.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","weixin","tsina","qzone","linkedin","fbook","twi","print","renren","sqq","evernotecn","bdysc","tqq","tqf","bdxc","kaixin001","tieba","douban","bdhome","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","h163","copy"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script></body></html>
