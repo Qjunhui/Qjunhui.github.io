@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="其实如果编写Vue的前端项目，直接使用vue的官方vue-cli构建工具最好用，一个命令就可以直接生成项目的结构和目录。而且官方需要依赖的包也可以自动配置好，只需要npm instal一下，然后就可以开发测试了。
+##vue-cli安装
+1.安装vue-cli。
+  安装之前首先确保你已经安装好了n">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="QJH">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Vue脚手架工具"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="浅笑"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Vue脚手架工具 - 浅笑</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Vue脚手架工具</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-03-12
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Vue/">#Vue</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>其实如果编写Vue的前端项目，直接使用vue的官方vue-cli构建工具最好用，一个命令就可以直接生成项目的结构和目录。<br>而且官方需要依赖的包也可以自动配置好，只需要npm instal一下，然后就可以开发测试了。</p>
+<p>##vue-cli安装</p>
+<p>1.安装vue-cli。</p>
+<p>  安装之前首先确保你已经安装好了nodejs 而且打开命令行</p>
+<pre><code>$ npm install -g vue-cli
+</code></pre><p>2.校验一下是否安装成功</p>
+<pre><code>$ vue -V
+</code></pre><p>##使用vue-cli初始化项目</p>
+<p>通过以下命令的方式可以创建一个项目文件夹，并初始化对应的文件。</p>
+<pre><code>$ vue init &lt;template-name&gt; &lt;project-name&gt;
+</code></pre><p>其中template-name可以取以下值，每个值对应不同的项目构建的模板。</p>
+<ul>
+<li><p>webpack–全功能的Webpack + vueify，包括热加载，静态检测，单元测试</p>
+</li>
+<li><p>webpack-simple–一个简易的Webpack + vueify，以便于快速开始。<br>browserify–全功能的Browserify + vueify，包括热加载，静态检测，单元测试</p>
+</li>
+<li><p>browserify-simple–一个简易的Browserify + vueify，以便于快速开始。</p>
+</li>
+</ul>
+<p>###安装和开发控制台的命令</p>
+<p>1.如果已经安装，请省略</p>
+<pre><code>$ npm install -g vue-cli
+</code></pre><p>2.初始化一个webpack全功能包的vue项目，请您把my-project换成你自己的项目名。</p>
+<pre><code>$ vue init webpack my-project
+</code></pre><p>3.用命令行进入当前项目目录</p>
+<pre><code>$ cd my-project
+</code></pre><p>4.npm安装所有的依赖的包</p>
+<pre><code>$ npm install
+</code></pre><p>5.运行测试的首页</p>
+<pre><code>$ npm run dev
+</code></pre><p>##综合实例开发记录</p>
+<p>###通过vue-cli构建工具初始化项目目录</p>
+<p>安装过程，控制台会问你项目名称是什么？项目描述？项目作者，是否使用eslint校验，是否使用单元测试等….</p>
+<p>我的安装过程如下请参考：</p>
+<pre><code>$ vue init webpack ttl                        # =&gt; 安装  webpack模板的项目 ttl（项目名可以随便取）
+  A newer version of vue-cli is available.
+  latest:    2.6.0
+  installed: 2.5.1
+  This will install Vue 2.x version of template.
+  For Vue 1.x use: vue init webpack#1.0 ttl
+? Project name mydemovue                        # =&gt; 项目名称
+? Project description A Vue.js project          # =&gt; 项目描述
+? Author malun &lt;malun666@126.com&gt;               # =&gt; 作者
+? Vue build standalone                          # =&gt; 是否支持单文件组件
+? Use ESLint to lint your code? Yes             # =&gt; 是否支持ESLint代码校验
+? Pick an ESLint preset Standard                # =&gt; 校验的标准是什么？
+? Setup unit tests with Karma + Mocha? Yes      # =&gt; 是否使用单元测试
+? Setup e2e tests with Nightwatch? Yes          # =&gt; 是否使用e2e测试
+   vue-cli · Generated &quot;ttl&quot;.
+   To get started:
+
+      cd ttl
+      npm install
+      npm run dev
+
+   Documentation can be found at https://vuejs-templates.github.io/webpack
+</code></pre><p>通过上面一系列的命令后，我们就会创建一个webpack配置好的项目包。目录结构如下：</p>
+<pre><code>ttl
+|--.babelrc           #=&gt; babel的配置文件，主要用于转换es6等最新的js语法。
+|--.editorconfig      #=&gt; 编辑器配置
+|--.eslintignore      #=&gt; eslint的忽略校验的配置文件
+|--.eslintrc.js       #=&gt; eslint的配置校验js是否规范的配置文件
+|--.gitignore         #=&gt; 设置git忽略的管理的文件
+|--README.md          #=&gt; readme说明文件
+|--build/             #=&gt; 自动构建存放的文件地方
+|--config/            #=&gt; 当前开发、测试等配置的文件，需要懂点nodejs了啊。
+|--index.html         #=&gt; 项目的主入口的模板
+|--package.json       #=&gt; npm的配置文件
+|--src/               #=&gt; 源码目录
+|--static/            #=&gt; 静态资源存放的目录
+|--test/              #=&gt; 测试相关目录
+</code></pre><p>###初始化依赖包</p>
+<pre><code>$ cd ttl              #=&gt; 进入上面创建好的项目目录
+$ npm install         #=&gt; 安装所有的依赖包。  安装过程可能非常长，网络也可能有问题，请耐心等待。
+#安装完成后，可以直接运行测试,如果自动打开浏览器，并跳转到http://localhost:8080/ 说明一切都ok了。
+$ npm run dev
+</code></pre><p>npm 安装的时候经常网会断开，国内的网（哎，说多了都是泪）你懂的。最好能科学上网，或者是用淘宝的npm的镜像</p>
+<p>###安装vue-router组件</p>
+<pre><code>$ npm i -S vue-router
+</code></pre><p>###到项目的 /src/components/ 目录下创建三个组件文件。</p>
+<p>分别是：</p>
+<ul>
+<li><p>首页组件</p>
+<p>  <template></template></p>
+<pre><code>&lt;div class=&quot;home&quot;&gt;
+   &lt;h3&gt;{{ msg }}&lt;/h3&gt;
+&lt;/div&gt;
+</code></pre><p>  <br>  <script></p>
+<pre><code>export default {
+    name: &apos;home&apos;,     // 组件可以有自己的名字。
+    data () {         // 组件的data必须是函数
+        return {
+            msg: &apos;这里是Home视图&apos;
+        }
+     }
+ }
+</code></pre><p>  </script></p>
+  <style scoped>
+     h3 {
+        background-color: #82c;
+     }
+  </style>
+
+
+</li>
+</ul>
+<ul>
+<li><p>用户首页组件</p>
+<p>  <template></template></p>
+<pre><code>&lt;div&gt;
+  &lt;h3&gt;{{ msg }}&lt;/h3&gt;
+&lt;/div&gt;
+</code></pre><p>  <br>  <script></p>
+<pre><code>export default {    // es6的模块导出定义语法，此模块导出默认的对象
+    name: &apos;user&apos;,     // 组件可以有自己的名字。
+    data () {         // 组件的data必须是函数
+        return {
+            msg: &apos;这里是User视图&apos;
+        }
+    }
+}
+</code></pre><p>  </script></p>
+  <style scoped>
+    h3 {
+        background-color: red;
+    }
+  </style>
+</li>
+<li><p>产品组件</p>
+<p>  <template></template></p>
+<pre><code>&lt;div class=&quot;product&quot;&gt;
+   &lt;h3&gt;{{ msg }}&lt;/h3&gt;
+&lt;/div&gt;
+</code></pre><p>  <br>  <script></p>
+<pre><code>export default {
+    name: &apos;product&apos;,     // 组件可以有自己的名字。
+    data () {         // 组件的data必须是函数
+        return {
+            msg: &apos;这里是product视图&apos;
+        }
+     }
+ }
+</code></pre><p>  </script></p>
+  <style scoped>
+     h3 {
+        background-color: green;
+     }
+  </style>
+
+
+</li>
+</ul>
+<ul>
+<li><p>项目的目录结构为：</p>
+<p>  ttl<br>  |– src<br>  |–|– Hello.vue<br>  |–|– Home.vue<br>  |–|– Product.vue<br>  |–|– User.vue</p>
+</li>
+</ul>
+<p>###创建router对象及配置路由</p>
+<p>1.在src目录下创建approuter.js文件。</p>
+<p>然后添加如下代码：</p>
+<pre><code>import VueRouter from &apos;vue-router&apos;              // 导入路由模块
+import Home from &apos;./components/Home.vue&apos;        // 导入Home组件
+import User from &apos;./components/User.vue&apos;
+import Product from &apos;./components/Product.vue&apos;
+export default new VueRouter({                  // 定义路由规则对象
+  routes: [
+    {path: &apos;/home&apos;, component: Home},
+    {path: &apos;/user/:id&apos;, component: User},
+    {path: &apos;/product/:id&apos;, component: Product}
+  ]
+})
+</code></pre><p>2.修改main.js文件</p>
+<p>找到src/目录下的main.js文件，</p>
+<p>共修改4处，添加路由引用、添加路由规则对象导入、启用路由、将路由键入到Vue中。</p>
+<p>修改此文件为：</p>
+<pre><code>// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import Vue from &apos;vue&apos;
+import App from &apos;./App&apos;
+import VueRouter from &apos;vue-router&apos;      // +++1、导入路由组件
+import router from &apos;./approuter&apos;        // +++2、导入我们自己写的路由配置文件
+// +++ 3、使用路由组件
+Vue.use(VueRouter)
+/* eslint-disable no-new */
+new Vue({
+  el: &apos;#app&apos;,
+  template: &apos;&lt;App/&gt;&apos;,
+  components: { App },
+  router: router                        // +++4、添加路由对象
+})
+</code></pre><p>在app.vue中添加路由导航</p>
+<p>最终代码如下：</p>
+<pre><code>&lt;template&gt;
+   &lt;div id=&quot;app&quot;&gt;
+       &lt;nav class=&quot;top-menu&quot;&gt;
+           &lt;ul &gt;
+              &lt;li v-for=&quot;item in menuList&quot;&gt;
+                  &lt;router-link :to=&quot;item.url&quot;&gt;{{ item.name }}&lt;/router-link&gt;
+              &lt;/li&gt;
+           &lt;/ul&gt;
+       &lt;/nav&gt;
+       &lt;hr&gt;
+       &lt;div&gt;
+           &lt;router-view&gt;&lt;/router-view&gt;
+       &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+   export default {
+       name: &apos;app&apos;,
+       data: function () {
+          return {
+              menuList: [
+                  { name: &apos;首页&apos;, url: &apos;/home&apos; },
+                  { name: &apos;用户&apos;, url: &apos;/user/19&apos; },
+                  { name: &apos;产品&apos;, url: &apos;/product/20&apos; }
+              ]
+          }
+    }
+}
+&lt;/script&gt;
+&lt;style&gt;
+  #app {
+
+  }
+  .top-menu ul, .top-menu li {
+      list-style: none;
+  }
+ .top-menu {
+      overflow: hidden;
+ }
+ .top-menu li {
+      float: left;
+      width: 100px;
+ }
+&lt;/style&gt;
+</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 QJH<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
