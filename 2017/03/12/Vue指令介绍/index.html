@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="#Vue指令介绍
+##v-text
+&amp;lt;span v-text=&amp;quot;msg&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+&amp;lt;!-- 和下面的一样 --&amp;gt;
+&amp;lt;span&amp;gt;{{msg}}&amp;lt;/span&amp;gt;
+##v-html
+&amp;lt;div v-html=&amp;quo">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="QJH">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Vue指令介绍"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="浅笑"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Vue指令介绍 - 浅笑</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Vue指令介绍</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-03-12
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Vue/">#Vue</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>#Vue指令介绍</p>
+<p>##v-text</p>
+<pre><code>&lt;span v-text=&quot;msg&quot;&gt;&lt;/span&gt;
+&lt;!-- 和下面的一样 --&gt;
+&lt;span&gt;{{msg}}&lt;/span&gt;
+</code></pre><p>##v-html</p>
+<pre><code>&lt;div v-html=&quot;html&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>指令的值可以为标签</strong></p>
+<p>##v-show</p>
+<pre><code>&lt;h1 v-show=&quot;内容转换为Bool值&quot;&gt;Hello!&lt;/h1&gt;
+</code></pre><p><strong>true显示false隐藏</strong></p>
+<p>##v-if &amp;&amp; v-else $$ v-else-if</p>
+<p>有时候我们要根据数据的情况，决定标签是否进行显示或者有其他动作。最常见的就是，表格渲染的时候，如果表格没有数据，就显示无数据。如果有数据就显示表格数据。</p>
+<p>Vue帮我们提供了一个v-if的指令，帮助我们完成判断的模板处理。</p>
+<pre><code>&lt;div v-if=&quot;Math.random() &gt; 0.5&quot;&gt;
+    1
+&lt;/div&gt;
+
+&lt;div v-else-if&gt;
+    2
+&lt;/div&gt;
+
+&lt;div v-else&gt;
+    3
+&lt;/div&gt;
+</code></pre><p>类似于 v-else,，v-else-if 必须紧跟在 v-if 或者 v-else-if 元素之后。</p>
+<p>##v-for</p>
+<p>模板引擎都会提供循环的支持。Vue也不例外，Vue是提供了一个v-for指令。基本的用法类似于foreach的用法。还是看例子最直接，上代码：</p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th&gt;姓名&lt;/th&gt;
+    &lt;th&gt;年龄&lt;/th&gt;
+    &lt;th&gt;地址&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;!-- 每次for循环，都会创建一个tr标签。item是遍历的元素。 --&gt;
+  &lt;tr v-for=&quot;item in UserList&quot; &gt;
+    &lt;td&gt;{{ item.name }}&lt;/td&gt;
+    &lt;td&gt;{{ item.age }}&lt;/td&gt;
+    &lt;td&gt;{{ item.address }}&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var app = new Vue({
+   el: &apos;#app&apos;,
+   data: {
+   UserList: [
+     {&apos;name&apos;: &apos;malun&apos;, &apos;age&apos;: 18, &apos;address&apos;: &apos;北京黑地下室&apos;},
+     {&apos;name&apos;: &apos;flydragon&apos;, &apos;age&apos;: 22, &apos;address&apos;: &apos;厦门的很多热的地方&apos;},
+     {&apos;name&apos;: &apos;temp&apos;, &apos;age&apos;: 25, &apos;address&apos;: &apos;东北松花江上&apos;}
+   ]
+  }
+});
+&lt;/script&gt;
+&lt;div v-for=&quot;(item, index) in items&quot;&gt;&lt;/div&gt;
+&lt;div v-for=&quot;(val, key) in object&quot;&gt;&lt;/div&gt;
+&lt;div v-for=&quot;(val, key, index) in object&quot;&gt;&lt;/div&gt;
+&lt;div v-for=&quot;item in items&quot; :key=&quot;item.id&quot;&gt;
+  {{ item.text }}
+&lt;/div&gt;
+</code></pre><p>如果我们希望每次循环生成两个tr标签呢？如果还有生成其他的标签呢？Vue给我们提供了template标签，供我们用于v-for循环中进行处理。</p>
+<pre><code>&lt;ul&gt;
+   &lt;!-- 通过template标签，可以一次循环，输出两个li标签 --&gt;
+   &lt;template v-for=&quot;item in items&quot;&gt;
+      &lt;li&gt;{{ item.msg }}&lt;/li&gt;
+      &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+   &lt;/template&gt;
+&lt;/ul&gt;
+</code></pre><p>一般作为列表渲染 注意:key是保证数据的唯一性 不写不会报错但是会出现警告</p>
+<p>##v-on</p>
+<p>内联的方式绑定的事件，只能处理简单的事件的处理逻辑。复杂的情况还是封装到js中最方便，也不容易出错。</p>
+<p>Vue对象中可以添加methods属性，开发者可以把事件处理函数的逻辑放到methods中。</p>
+<pre><code>&lt;body&gt;
+   &lt;div id=&quot;app&quot;&gt;
+     &lt;p&gt;{{ number }}&lt;/p&gt;
+     &lt;input type=&quot;button&quot; name=&quot;btnGetNumber&quot; value=&quot;增加[绑定事件处理器]&quot; v-on:click=&quot;getNumber&quot;&gt;
+     &lt;input type=&quot;button&quot; name=&quot;btnGetNumber&quot; value=&quot;增加[内联方法调用]&quot; v-on:click=&quot;getNumber()&quot;&gt;
+   &lt;/div&gt;
+&lt;script&gt;
+  var app = new Vue({
+  el: &apos;#app&apos;,
+  data: {
+    number: 1
+  },
+  methods: {
+    // 事件响应方法的逻辑代码
+    getNumber: function (e) {
+      this.number += 1;   // 不管是内联方法调用，还是绑定事件处理器两种方式执行事件响应方法的时候 this都是指向 app
+    }
+  }
+});
+&lt;/script&gt;
+</code></pre><p>在事件处理程序中调用 event.preventDefault() 或 event.stopPropagation() 是非常常见的需求。尽管我们可以在 methods 中轻松实现这点，但更好的方式是：methods 只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。</p>
+<p>为了解决这个问题， Vue.js 为 v-on 提供了 事件修饰符。通过由点(.)表示的指令后缀来调用修饰符。</p>
+<pre><code>&lt;!-- 方法处理器 --&gt;
+&lt;button v-on:click=&quot;doThis&quot;&gt;&lt;/button&gt;
+&lt;!-- 内联语句 --&gt;
+&lt;button v-on:click=&quot;doThat(&apos;hello&apos;, $event)&quot;&gt;&lt;/button&gt;
+&lt;!-- 缩写 --&gt;
+&lt;button @click=&quot;doThis&quot;&gt;&lt;/button&gt;
+&lt;!-- 停止冒泡 --&gt;
+&lt;button @click.stop=&quot;doThis&quot;&gt;&lt;/button&gt;
+&lt;!-- 阻止默认行为 --&gt;
+&lt;button @click.prevent=&quot;doThis&quot;&gt;&lt;/button&gt;
+&lt;!-- 阻止默认行为，没有表达式 --&gt;
+&lt;form @submit.prevent&gt;&lt;/form&gt;
+&lt;!--  串联修饰符 --&gt;
+&lt;button @click.stop.prevent=&quot;doThis&quot;&gt;&lt;/button&gt;
+&lt;!-- 键修饰符，键别名 --&gt;
+&lt;input @keyup.enter=&quot;onEnter&quot;&gt;
+&lt;!-- 键修饰符，键代码 --&gt;
+&lt;input @keyup.13=&quot;onEnter&quot;&gt; 像ctrl不能直接写键名字 需要keycode
+</code></pre><p>.stop - 调用 event.stopPropagation()。</p>
+<p>.prevent - 调用 event.preventDefault()。</p>
+<p>.capture - 添加事件侦听器时使用 capture 模式。</p>
+<p>.self - 只当事件是从侦听器绑定的元素本身触发时才触发回调。</p>
+<p>.{keyCode | keyAlias} - 只当事件是从侦听器绑定的元素本身触发时才触发回调。</p>
+<p>.native - 监听组件根元素的原生事件。</p>
+<p>##v-bind</p>
+<pre><code>&lt;!-- 绑定一个属性 --&gt;
+&lt;img v-bind:src=&quot;imageSrc&quot;&gt;
+&lt;!-- 缩写 --&gt;
+&lt;img :src=&quot;imageSrc&quot;&gt;
+&lt;div :class=&quot; &apos;color&apos;: isRed &quot;&gt;&lt;/div&gt; &lt;-- color是写死的 isred为变量--&gt;
+&lt;div :style=&quot;{ fontSize: size + &apos;px&apos; }&quot;&gt;&lt;/div&gt;
+</code></pre><p>作用绑定数据的</p>
+<p><img src="http://wanyifeng.top/images/06.img%E4%B8%AD%E6%9C%89%E5%85%B3v-bind%E7%9A%84%E8%AF%B4%E6%98%8E.png" alt=""></p>
+<p>##v-model</p>
+<p>###限制：</p>
+<p>input</p>
+<p>select</p>
+<p>textarea</p>
+<p>作用于表单标签 在表单控件或者组件上创建双向绑定</p>
+<p><img src="http://wanyifeng.top/images/07.v-model%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A.png" alt=""></p>
+<p>##获取元素节点</p>
+<p>vue2.0废除了v-el指令，所有的节点指令修改为ref，然后通过ref来获取元素节点，如</p>
+<pre><code>&lt;div ref=&quot;testHook&quot;&gt;test&lt;/div&gt;
+...js code
+this.$ref.testHook
+</code></pre><p>##自定义指令</p>
+<pre><code>Vue.directive(&apos;red&apos;,(color = &apos;red&apos;){ //er6 语法 如果color没值就把&quot;red&quot;赋过去
+      this.el.style.background = color;
+  });
+  window.onload=()=&gt;{
+      var vm=new Vue({
+          el:&apos;#app&apos;,
+          data:{
+              msg:&apos;welcome&apos;
+          }
+      });
+  };
+</code></pre><p>  <code>&lt;div id=&quot;app&quot;&gt;
+      &lt;span v-red&gt;
+          字体颜色变化
+      &lt;/span&gt;
+  &lt;/div&gt;</code></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 QJH<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

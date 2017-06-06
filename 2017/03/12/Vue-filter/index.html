@@ -10,6 +10,10 @@
 
     <!--Description-->
     
+        <meta name="description" content="Vue.js 允许你自定义过滤器，被用作一些常见的文本格式化。过滤器应该被添加在 mustache 插值的尾部，由“管道符”指示：
+##全局的过滤器
+Vue.filter(&amp;apos;toLowerCase&amp;apos;,function(input){  //第一个参数为过滤器的名字 第二个参数为回">
+    
 
     <!--Author-->
     
@@ -18,7 +22,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="浅笑"/>
+        <meta property="og:title" content="Vue-filter"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>浅笑</title>
+    <title>Vue-filter - 浅笑</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -127,186 +131,147 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>浅笑</h1>
-                    <hr class="small">
-                    <span class="subheading"></span>
+                <div class="post-heading">
+                    <h1>Vue-filter</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-03-12
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2017/03/12/Vue-filter/">
-        <h2 class="post-title">
-            Vue-filter
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-03-12
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/03/12/Vue-router/">
-        <h2 class="post-title">
-            Vue-filter
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-03-12
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/03/12/Vue模块通讯/">
-        <h2 class="post-title">
-            Vue-filter
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-03-12
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/03/12/Vue指令介绍/">
-        <h2 class="post-title">
-            Vue指令介绍
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-03-12
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/03/12/Vue介绍/">
-        <h2 class="post-title">
-            Vue介绍
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-03-12
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/01/05/Ajax/">
-        <h2 class="post-title">
-            Ajax
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-01-05
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/12/11/闭包/">
-        <h2 class="post-title">
-            闭包
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-12-11
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/06/03/RegExp/">
-        <h2 class="post-title">
-            RegExp
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-06-03
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/05/25/移动开发的常见问题/">
-        <h2 class="post-title">
-            移动开发常见问题
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-05-25
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/04/25/HTML5原生框架/">
-        <h2 class="post-title">
-            myJS.js
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-04-25
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Vue/">#Vue</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
 
-            <ul class="pager">
-    
-    
-</ul>
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Vue.js 允许你自定义过滤器，被用作一些常见的文本格式化。过滤器应该被添加在 mustache 插值的尾部，由“管道符”指示：</p>
+<p>##全局的过滤器</p>
+<pre><code>Vue.filter(&apos;toLowerCase&apos;,function(input){  //第一个参数为过滤器的名字 第二个参数为回调函数 在回调函数中返回过滤完成后的数据
+   return input.toLowerCase();
+})
+var vue = new Vue({
+   el:&quot;#app&quot;,
+   data:{
+     message : &apos;Hello Vue&apos;
+   }
+});
+var vue2 =  new Vue({
+   el:&quot;#app2&quot;,
+   data:{
+     msg : &apos;GOOD MORNING&apos;
+   }
+});
+</code></pre><hr>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+   {{message | toLowerCase}} // &quot;|&quot;管道符  为过滤器的意思 后面跟着过滤器的名字
+&lt;/div&gt;
+&lt;div id=&quot;app2&quot;&gt;
+   {{msg | toLowerCase(msg,"vue2")}} // 过滤器可以传递参数一般第一个参数为为本身可以省略不写 其他参数 可以根据定义过滤器的规则进行传参
+&lt;/div&gt;
+</code></pre><p>##私有的过滤器</p>
+<pre><code>var vue = new Vue({
+  el:&quot;#app&quot;,
+  data:{
+    message : &apos;Hello Vue&apos;
+  },
+  filters:{
+     toLowerCase:function(input){
+          return input.toLowerCase();
+     }
+  }
+});
+var vue2 =  new Vue({
+  el:&quot;#app2&quot;,
+  data:{
+    msg : &apos;GOOD MORNING&apos;
+  },
+  filters:{
+     toLowerCase:function(input){
+          return input.toLowerCase();
+     }
+  }
+});
+</code></pre><hr>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+   {{message | toLowerCase}}
+&lt;/div&gt;
+&lt;div id=&quot;app2&quot;&gt;
+   {{msg | toLowerCase}}
+&lt;/div&gt;
+</code></pre><p>私有过滤器定义在当前的Vue对象里面</p>
+<p>##绑定的数据过滤器</p>
+<pre><code>{{ message | capitalize }}
+&lt;!-- in mustaches --&gt;
+{{ message | capitalize }}
+&lt;!-- in v-bind --&gt;
+&lt;div v-bind:id=&quot;rawId | formatId&quot;&gt;&lt;/div&gt;
+</code></pre><p>Vue 2.x 中，过滤器只能在 mustache 绑定和 v-bind 表达式（从 2.1.0 开始支持）中使用，因为过滤器设计目的就是用于文本转换。为了在其他指令中实现更复杂的数据变换，你应该使用计算属性。</p>
+<p>过滤器函数总接受表达式的值作为第一个参数。</p>
+<pre><code>new Vue({
+   // ...
+   filters: {
+      capitalize: function (value) {
+         if (!value) return &apos;&apos;
+         value = value.toString()
+         return value.charAt(0).toUpperCase() + value.slice(1)
+      }
+   }
+})
+</code></pre><p>过滤器可以串联：</p>
+<pre><code>{{ message | filterA | filterB }}
+</code></pre><p>过滤器是 JavaScript 函数，因此可以接受参数：</p>
+<pre><code>{{ message | filterA('arg1', arg2) }}
+</code></pre><p>这里，字符串 ‘arg1’ 将传给过滤器作为第二个参数， arg2 表达式的值将被求值然后传给过滤器作为第三个参数。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
