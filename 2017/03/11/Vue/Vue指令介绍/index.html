@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="null"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Vue指令介绍 | 浅笑</title><link rel="stylesheet" type="text/css" href="//fonts.css.network/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Vue指令介绍</h1><a id="logo" href="/.">浅笑</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Start</i></a><a href="/archives/"><i class="fa fa-archive"> Archiv</i></a><a href="/about/"><i class="fa fa-user"> Über</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Search"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Vue指令介绍</h1><div class="post-meta"><span class="date">Mar 11, 2017</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i> Hits</i></i></span><a href="/2017/03/11/Vue/Vue指令介绍/#comments" class="comment-count">Gästebuch</a></div><div class="post-content"><p>#Vue指令介绍</p>
+<p>##v-text</p>
+<pre><code>&lt;span v-text=&quot;msg&quot;&gt;&lt;/span&gt;
+&lt;!-- 和下面的一样 --&gt;
+&lt;span&gt;{{msg}}&lt;/span&gt;
+</code></pre><p>##v-html</p>
+<pre><code>&lt;div v-html=&quot;html&quot;&gt;&lt;/div&gt;
+</code></pre><p><strong>指令的值可以为标签</strong></p>
+<p>##v-show</p>
+<pre><code>&lt;h1 v-show=&quot;内容转换为Bool值&quot;&gt;Hello!&lt;/h1&gt;
+</code></pre><p><strong>true显示false隐藏</strong></p>
+<p>##v-if &amp;&amp; v-else $$ v-else-if</p>
+<p>有时候我们要根据数据的情况，决定标签是否进行显示或者有其他动作。最常见的就是，表格渲染的时候，如果表格没有数据，就显示无数据。如果有数据就显示表格数据。</p>
+<p>Vue帮我们提供了一个v-if的指令，帮助我们完成判断的模板处理。</p>
+<pre><code>&lt;div v-if=&quot;Math.random() &gt; 0.5&quot;&gt;
+    1
+&lt;/div&gt;
+
+&lt;div v-else-if&gt;
+    2
+&lt;/div&gt;
+
+&lt;div v-else&gt;
+    3
+&lt;/div&gt;
+</code></pre><p>类似于 v-else,，v-else-if 必须紧跟在 v-if 或者 v-else-if 元素之后。</p>
+<p>##v-for</p>
+<p>模板引擎都会提供循环的支持。Vue也不例外，Vue是提供了一个v-for指令。基本的用法类似于foreach的用法。还是看例子最直接，上代码：</p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th&gt;姓名&lt;/th&gt;
+    &lt;th&gt;年龄&lt;/th&gt;
+    &lt;th&gt;地址&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;!-- 每次for循环，都会创建一个tr标签。item是遍历的元素。 --&gt;
+  &lt;tr v-for=&quot;item in UserList&quot; &gt;
+    &lt;td&gt;{{ item.name }}&lt;/td&gt;
+    &lt;td&gt;{{ item.age }}&lt;/td&gt;
+    &lt;td&gt;{{ item.address }}&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var app = new Vue({
+   el: &apos;#app&apos;,
+   data: {
+   UserList: [
+     {&apos;name&apos;: &apos;malun&apos;, &apos;age&apos;: 18, &apos;address&apos;: &apos;北京黑地下室&apos;},
+     {&apos;name&apos;: &apos;flydragon&apos;, &apos;age&apos;: 22, &apos;address&apos;: &apos;厦门的很多热的地方&apos;},
+     {&apos;name&apos;: &apos;temp&apos;, &apos;age&apos;: 25, &apos;address&apos;: &apos;东北松花江上&apos;}
+   ]
+  }
+});
+&lt;/script&gt;
+&lt;div v-for=&quot;(item, index) in items&quot;&gt;&lt;/div&gt;
+&lt;div v-for=&quot;(val, key) in object&quot;&gt;&lt;/div&gt;
+&lt;div v-for=&quot;(val, key, index) in object&quot;&gt;&lt;/div&gt;
+&lt;div v-for=&quot;item in items&quot; :key=&quot;item.id&quot;&gt;
+  {{ item.text }}
+&lt;/div&gt;
+</code></pre><p>如果我们希望每次循环生成两个tr标签呢？如果还有生成其他的标签呢？Vue给我们提供了template标签，供我们用于v-for循环中进行处理。</p>
+<pre><code>&lt;ul&gt;
+   &lt;!-- 通过template标签，可以一次循环，输出两个li标签 --&gt;
+   &lt;template v-for=&quot;item in items&quot;&gt;
+      &lt;li&gt;{{ item.msg }}&lt;/li&gt;
+      &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+   &lt;/template&gt;
+&lt;/ul&gt;
+</code></pre><p>一般作为列表渲染 注意:key是保证数据的唯一性 不写不会报错但是会出现警告</p>
+<p>##v-on</p>
+<p>内联的方式绑定的事件，只能处理简单的事件的处理逻辑。复杂的情况还是封装到js中最方便，也不容易出错。</p>
+<p>Vue对象中可以添加methods属性，开发者可以把事件处理函数的逻辑放到methods中。</p>
+<pre><code>&lt;body&gt;
+   &lt;div id=&quot;app&quot;&gt;
+     &lt;p&gt;{{ number }}&lt;/p&gt;
+     &lt;input type=&quot;button&quot; name=&quot;btnGetNumber&quot; value=&quot;增加[绑定事件处理器]&quot; v-on:click=&quot;getNumber&quot;&gt;
+     &lt;input type=&quot;button&quot; name=&quot;btnGetNumber&quot; value=&quot;增加[内联方法调用]&quot; v-on:click=&quot;getNumber()&quot;&gt;
+   &lt;/div&gt;
+&lt;script&gt;
+  var app = new Vue({
+  el: &apos;#app&apos;,
+  data: {
+    number: 1
+  },
+  methods: {
+    // 事件响应方法的逻辑代码
+    getNumber: function (e) {
+      this.number += 1;   // 不管是内联方法调用，还是绑定事件处理器两种方式执行事件响应方法的时候 this都是指向 app
+    }
+  }
+});
+&lt;/script&gt;
+</code></pre><p>在事件处理程序中调用 event.preventDefault() 或 event.stopPropagation() 是非常常见的需求。尽管我们可以在 methods 中轻松实现这点，但更好的方式是：methods 只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。</p>
+<p>为了解决这个问题， Vue.js 为 v-on 提供了 事件修饰符。通过由点(.)表示的指令后缀来调用修饰符。</p>
+<pre><code>&lt;!-- 方法处理器 --&gt;
+&lt;button v-on:click=&quot;doThis&quot;&gt;&lt;/button&gt;
+&lt;!-- 内联语句 --&gt;
+&lt;button v-on:click=&quot;doThat(&apos;hello&apos;, $event)&quot;&gt;&lt;/button&gt;
+&lt;!-- 缩写 --&gt;
+&lt;button @click=&quot;doThis&quot;&gt;&lt;/button&gt;
+&lt;!-- 停止冒泡 --&gt;
+&lt;button @click.stop=&quot;doThis&quot;&gt;&lt;/button&gt;
+&lt;!-- 阻止默认行为 --&gt;
+&lt;button @click.prevent=&quot;doThis&quot;&gt;&lt;/button&gt;
+&lt;!-- 阻止默认行为，没有表达式 --&gt;
+&lt;form @submit.prevent&gt;&lt;/form&gt;
+&lt;!--  串联修饰符 --&gt;
+&lt;button @click.stop.prevent=&quot;doThis&quot;&gt;&lt;/button&gt;
+&lt;!-- 键修饰符，键别名 --&gt;
+&lt;input @keyup.enter=&quot;onEnter&quot;&gt;
+&lt;!-- 键修饰符，键代码 --&gt;
+&lt;input @keyup.13=&quot;onEnter&quot;&gt; 像ctrl不能直接写键名字 需要keycode
+</code></pre><p>.stop - 调用 event.stopPropagation()。</p>
+<p>.prevent - 调用 event.preventDefault()。</p>
+<p>.capture - 添加事件侦听器时使用 capture 模式。</p>
+<p>.self - 只当事件是从侦听器绑定的元素本身触发时才触发回调。</p>
+<p>.{keyCode | keyAlias} - 只当事件是从侦听器绑定的元素本身触发时才触发回调。</p>
+<p>.native - 监听组件根元素的原生事件。</p>
+<p>##v-bind</p>
+<pre><code>&lt;!-- 绑定一个属性 --&gt;
+&lt;img v-bind:src=&quot;imageSrc&quot;&gt;
+&lt;!-- 缩写 --&gt;
+&lt;img :src=&quot;imageSrc&quot;&gt;
+&lt;div :class=&quot; &apos;color&apos;: isRed &quot;&gt;&lt;/div&gt; &lt;-- color是写死的 isred为变量--&gt;
+&lt;div :style=&quot;{ fontSize: size + &apos;px&apos; }&quot;&gt;&lt;/div&gt;
+</code></pre><p>作用绑定数据的</p>
+<p><img src="http://wanyifeng.top/images/06.img%E4%B8%AD%E6%9C%89%E5%85%B3v-bind%E7%9A%84%E8%AF%B4%E6%98%8E.png" alt=""></p>
+<p>##v-model</p>
+<p>###限制：</p>
+<p>input</p>
+<p>select</p>
+<p>textarea</p>
+<p>作用于表单标签 在表单控件或者组件上创建双向绑定</p>
+<p><img src="http://wanyifeng.top/images/07.v-model%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A.png" alt=""></p>
+<p>##获取元素节点</p>
+<p>vue2.0废除了v-el指令，所有的节点指令修改为ref，然后通过ref来获取元素节点，如</p>
+<pre><code>&lt;div ref=&quot;testHook&quot;&gt;test&lt;/div&gt;
+...js code
+this.$ref.testHook
+</code></pre><p>##自定义指令</p>
+<pre><code>Vue.directive(&apos;red&apos;,(color = &apos;red&apos;){ //er6 语法 如果color没值就把&quot;red&quot;赋过去
+      this.el.style.background = color;
+  });
+  window.onload=()=&gt;{
+      var vm=new Vue({
+          el:&apos;#app&apos;,
+          data:{
+              msg:&apos;welcome&apos;
+          }
+      });
+  };
+</code></pre><p>  <code>&lt;div id=&quot;app&quot;&gt;
+      &lt;span v-red&gt;
+          字体颜色变化
+      &lt;/span&gt;
+  &lt;/div&gt;</code></p>
+</div><div class="tags"><a href="/tags/Vue/">Vue</a></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2017/03/12/Vue/Vue脚手架工具/" class="pre">Vue脚手架工具</a><a href="/2017/03/10/Vue/Vue生命周期/" class="next">Vue生命周期</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">Inhalte</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> Letzte</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue/Vue模块通讯/">Vue模块通讯</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue/Vue-filter/">Vue-filter</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue/Vue-router/">Vue-router</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue/Vue组件化开发/">Vue组件化开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/12/Vue/Vue脚手架工具/">Vue脚手架工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/11/Vue/Vue指令介绍/">Vue指令介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/Vue/Vue生命周期/">Vue生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/Vue/Vue介绍/">Vue介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/05/Ajax/">Ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/11/闭包/">闭包</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> Tags</i></div><div class="tagcloud"><a href="/tags/原生框架/" style="font-size: 15px;">原生框架</a> <a href="/tags/正则表达式/" style="font-size: 15px;">正则表达式</a> <a href="/tags/闭包/" style="font-size: 15px;">闭包</a> <a href="/tags/移动web/" style="font-size: 15px;">移动web</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> Archiv</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> Blogroll</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Baidu Sitemap</a> |  <a href="/atom.xml">RSS</a> |  <a href="/about/">Über</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">QJH.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","weixin","tsina","qzone","linkedin","fbook","twi","print","renren","sqq","evernotecn","bdysc","tqq","tqf","bdxc","kaixin001","tieba","douban","bdhome","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","h163","copy"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script></body></html>
